@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1103" height="433" viewBox="0 0 1103 433" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path d="M60.5 0C60.5 0 0 66.5 0 151.5C0 236.5 60.5 302.5 60.5 302.5C60.5 302.5 121 236.5 121 151.5C121 66.5 60.5 0 60.5 0Z" fill="#13AA52"/>
+    <path d="M60.5 302.5C60.5 302.5 60.5 433 60.5 433" stroke="#13AA52" stroke-width="10"/>
+    <text x="150" y="210" font-family="Arial, Helvetica, sans-serif" font-size="180" fill="#0A2327">MongoDB</text>
+    <text x="180" y="370" font-family="Arial, Helvetica, sans-serif" font-size="140" fill="#0A2327">for Startups</text>
+  </g>
+</svg>
