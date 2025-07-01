@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Heart, Brain, Sparkles } from 'lucide-react';
+import mongoLogoPng from '../assets/MongoDB_forStartups_SlateBlue.png';
 
 const Hero: React.FC = () => {
   return (
@@ -99,7 +100,7 @@ export default Hero;
 export const MongoDBAccelerator: React.FC = () => (
   <section className="w-full flex justify-center items-center py-14 bg-gradient-to-r from-slate-100 via-white to-slate-100">
     <div className="flex items-center gap-6 bg-white/80 rounded-2xl shadow-lg px-8 py-6 border border-slate-200 w-full max-w-5xl justify-center">
-      <img src="/src/assets/mongodb-logo.svg" alt="MongoDB Logo" className="h-16 w-auto" />
+      <img src={mongoLogoPng} alt="MongoDB for Startups Logo" className="h-12 w-auto" />
       <span className="text-2xl md:text-3xl font-semibold text-slate-800 text-center">
         Backed by <span className="text-green-600">MongoDB Startup Accelerator</span>
       </span>
