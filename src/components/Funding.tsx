@@ -17,7 +17,7 @@ const Funding: React.FC = () => {
             Use of Funds
           </h2>
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-white mb-10 border border-white/10">
-            <h3 className="text-2xl font-semibold mb-4">$500,000 SAFE @ $5M cap</h3>
+            <h3 className="text-2xl font-semibold mb-4">$1,000,000 SAFE @ $5M cap</h3>
             <p className="text-lg font-light">
               To scale product development and bring Evolance to the world
             </p>
@@ -31,12 +31,12 @@ const Funding: React.FC = () => {
                 <Brain className="w-6 h-6 text-blue-300" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white">AI & Infrastructure</h3>
-                <p className="text-2xl font-bold text-blue-300">$250,000</p>
+                <h3 className="text-lg font-semibold text-white">AI Model Development</h3>
+                <p className="text-2xl font-bold text-blue-300">$600,000</p>
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
-              Hire 3 full-time engineers to expand voice + emotional models (Gemini, ElevenLabs, Twilio)
+              Salaries for core AI team, compute, data, and training to build our own emotional intelligence model.
             </p>
           </div>
 
@@ -51,7 +51,7 @@ const Funding: React.FC = () => {
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
-              Launch iOS and Android beta including Bubble, Deep Awareness, and Companion features
+              Launch iOS and Android beta including Bubble, Deep Awareness, and Companion features.
             </p>
           </div>
 
@@ -61,27 +61,12 @@ const Funding: React.FC = () => {
                 <Brain className="w-6 h-6 text-purple-300" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white">NLP & Emotional R&D</h3>
-                <p className="text-2xl font-bold text-purple-300">$75,000</p>
+                <h3 className="text-lg font-semibold text-white">Product & Engineering</h3>
+                <p className="text-2xl font-bold text-purple-300">$200,000</p>
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
-              Enhance identity modeling, prompt feedback loops, and growth tracking systems
-            </p>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mr-3">
-                <Shield className="w-6 h-6 text-indigo-300" />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-white">Legal & Compliance</h3>
-                <p className="text-2xl font-bold text-indigo-300">$50,000</p>
-              </div>
-            </div>
-            <p className="text-white/80 text-sm leading-relaxed">
-              Register 501(c)(3), secure IP, and ensure global data privacy compliance
+              App/web engineering, infrastructure, and deployment for a seamless user experience.
             </p>
           </div>
 
@@ -92,11 +77,26 @@ const Funding: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-white">Brand & Community</h3>
-                <p className="text-2xl font-bold text-orange-300">$25,000</p>
+                <p className="text-2xl font-bold text-orange-300">$75,000</p>
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
-              Fund ambassador onboarding, early creator outreach, and waitlist conversion
+              Fund ambassador onboarding, creator outreach, waitlist, and marketing.
+            </p>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/10 hover:bg-white/10 transition-all duration-300 md:col-span-2 lg:col-span-1">
+            <div className="flex items-center mb-4">
+              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mr-3">
+                <Brain className="w-6 h-6 text-indigo-300" />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-white">NLP & Emotional R&D</h3>
+                <p className="text-2xl font-bold text-indigo-300">$25,000</p>
+              </div>
+            </div>
+            <p className="text-white/80 text-sm leading-relaxed">
+              Research, clinical advisors, and evaluation of emotional intelligence systems.
             </p>
           </div>
 
@@ -107,7 +107,7 @@ const Funding: React.FC = () => {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Total Investment</h3>
               <p className="text-3xl font-bold text-blue-300">
-                $500,000
+                $1,000,000
               </p>
               <p className="text-white/80 text-sm mt-2">
                 Building the future of emotional AI

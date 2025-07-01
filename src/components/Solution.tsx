@@ -13,7 +13,7 @@ const Solution: React.FC = () => {
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
+          <h2 className="text-3xl font-bold text-white mb-8 tracking-tight">
             Our Solution
           </h2>
           <p className="text-lg text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
@@ -29,42 +29,21 @@ const Solution: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-green-500/20 rounded-xl flex items-center justify-center mr-4">
-                <MessageCircle className="w-7 h-7 text-green-300" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="flex flex-col justify-between h-full bg-white/10 rounded-2xl p-8 border border-white/10 shadow-lg min-h-[260px]">
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mr-4">
+                  <CheckCircle className="w-7 h-7 text-blue-300" />
+                </div>
+                <h3 className="text-xl font-semibold text-white">Overcome and Appreciate</h3>
               </div>
-              <h3 className="text-xl font-semibold text-white">Emotionally Present Personal Bubble</h3>
+              <p className="text-white/80 text-base mb-4 leading-relaxed">
+                After each bubble session, Evolance generates a personalized To-Do list with small, 
+                meaningful challenges to help users overcome stuck thoughts and practice self-appreciation.
+              </p>
             </div>
-            <p className="text-white/80 mb-4 text-sm leading-relaxed">
-              A private, empathetic space where users tell their full story. The AI listens, understands, 
-              and converts that session into a saved emotional record — like a living diary that responds.
-            </p>
-            <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-              <svg className="w-full h-20 mb-4" viewBox="0 0 300 80">
-                <circle cx="50" cy="40" r="25" fill="white" fillOpacity="0.2"/>
-                <circle cx="150" cy="40" r="20" fill="white" fillOpacity="0.3"/>
-                <circle cx="250" cy="40" r="15" fill="white" fillOpacity="0.4"/>
-                <path d="M75,40 Q110,25 120,40 Q130,55 165,40" stroke="white" strokeWidth="1.5" fill="none" opacity="0.6"/>
-                <path d="M170,40 Q205,25 215,40 Q225,55 265,40" stroke="white" strokeWidth="1.5" fill="none" opacity="0.6"/>
-              </svg>
-              <p className="text-sm text-white/90 italic">Your thoughts become understanding</p>
-            </div>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mr-4">
-                <CheckCircle className="w-7 h-7 text-blue-300" />
-              </div>
-              <h3 className="text-xl font-semibold text-white">Overcome and Appreciate</h3>
-            </div>
-            <p className="text-white/80 mb-4 text-sm leading-relaxed">
-              After each bubble session, Evolance generates a personalized To-Do list with small, 
-              meaningful challenges to help users overcome stuck thoughts and practice self-appreciation.
-            </p>
-            <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+            <div className="bg-white/5 rounded-lg p-4 border border-white/10 mt-auto">
               <div className="space-y-3">
                 <div className="flex items-center">
                   <div className="w-3 h-3 bg-blue-300 rounded-full mr-3"></div>
@@ -82,18 +61,20 @@ const Solution: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mr-4">
-                <Eye className="w-7 h-7 text-purple-300" />
+          <div className="flex flex-col justify-between h-full bg-white/10 rounded-2xl p-8 border border-white/10 shadow-lg min-h-[260px]">
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mr-4">
+                  <Eye className="w-7 h-7 text-purple-300" />
+                </div>
+                <h3 className="text-xl font-semibold text-white">Visualize Your Decisions</h3>
               </div>
-              <h3 className="text-xl font-semibold text-white">Visualize Your Decisions</h3>
+              <p className="text-white/80 text-base mb-4 leading-relaxed">
+                Deep Awareness Mode guides users to examine their emotions and choices deeply. 
+                It helps them realign decisions with their values, not pressure.
+              </p>
             </div>
-            <p className="text-white/80 mb-4 text-sm leading-relaxed">
-              Deep Awareness Mode guides users to examine their emotions and choices deeply. 
-              It helps them realign decisions with their values, not pressure.
-            </p>
-            <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+            <div className="bg-white/5 rounded-lg p-4 border border-white/10 mt-auto">
               <svg className="w-full h-16 mb-4" viewBox="0 0 300 60">
                 <path d="M50,30 L100,15 L150,30 L200,15 L250,30" stroke="white" strokeWidth="2" fill="none" opacity="0.6"/>
                 <circle cx="50" cy="30" r="4" fill="white" opacity="0.7"/>
@@ -104,18 +85,20 @@ const Solution: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/10 hover:bg-white/10 transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center mr-4">
-                <TrendingUp className="w-7 h-7 text-indigo-300" />
+          <div className="flex flex-col justify-between h-full bg-white/10 rounded-2xl p-8 border border-white/10 shadow-lg min-h-[260px]">
+            <div>
+              <div className="flex items-center mb-6">
+                <div className="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center mr-4">
+                  <TrendingUp className="w-7 h-7 text-indigo-300" />
+                </div>
+                <h3 className="text-xl font-semibold text-white">Your Consciousness Journey</h3>
               </div>
-              <h3 className="text-xl font-semibold text-white">Your Consciousness Journey</h3>
+              <p className="text-white/80 text-base mb-4 leading-relaxed">
+                The entire platform is structured as a guided journey through levels of awareness. 
+                Evolance helps users move from confusion to clarity — building identity, resilience, and self-trust.
+              </p>
             </div>
-            <p className="text-white/80 mb-4 text-sm leading-relaxed">
-              The entire platform is structured as a guided journey through levels of awareness. 
-              Evolance helps users move from confusion to clarity — building identity, resilience, and self-trust.
-            </p>
-            <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+            <div className="bg-white/5 rounded-lg p-4 border border-white/10 mt-auto">
               <div className="flex justify-between items-center">
                 <div className="text-center">
                   <div className="w-6 h-6 bg-white/20 rounded-full mb-2"></div>
