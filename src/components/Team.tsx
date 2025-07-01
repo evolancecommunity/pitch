@@ -111,7 +111,7 @@ const Team: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white flex items-center">
-                      <a href="https://www.linkedin.com/in/kyle-padayachee/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Kyle Pdayechee <LinkedInIcon /></a>
+                      <a href="https://www.linkedin.com/in/kyle-padayachee/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Kyle Padayachee <LinkedInIcon /></a>
                     </h3>
                     <p className="text-white/80 text-sm">Founding Engineer (South Africa)</p>
                   </div>
