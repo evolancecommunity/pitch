@@ -19,7 +19,7 @@ const Funding: React.FC = () => {
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-white mb-10 border border-white/10">
             <h3 className="text-2xl font-semibold mb-4">$1,000,000 SAFE @ $5M cap</h3>
             <p className="text-lg font-light">
-              To scale product development and bring Evolance to the world
+              This $1M round gets us to a working proprietary model, validated emotional safety metrics, and a full beta launch with 10K+ users.
             </p>
           </div>
         </div>
@@ -35,8 +35,11 @@ const Funding: React.FC = () => {
                 <p className="text-2xl font-bold text-blue-300">$600,000</p>
               </div>
             </div>
-            <p className="text-white/80 text-sm leading-relaxed">
-              Salaries for core AI team, compute, data, and training to build our own emotional intelligence model.
+            <p className="text-white/80 text-sm leading-relaxed mb-2">
+              Salaries, compute, and data to train our own emotional intelligence model.
+            </p>
+            <p className="text-white/90 text-xs font-semibold">
+              <span className="text-blue-300">Goal:</span> Reach proprietary MVP model that outperforms GPT/Claude in emotion-specific benchmarks.
             </p>
           </div>
 
@@ -46,12 +49,15 @@ const Funding: React.FC = () => {
                 <Smartphone className="w-6 h-6 text-green-300" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white">Mobile Beta</h3>
+                <h3 className="text-lg font-semibold text-white">Mobile Beta Launch</h3>
                 <p className="text-2xl font-bold text-green-300">$100,000</p>
               </div>
             </div>
-            <p className="text-white/80 text-sm leading-relaxed">
-              Launch iOS and Android beta including Bubble, Deep Awareness, and Companion features.
+            <p className="text-white/80 text-sm leading-relaxed mb-2">
+              Deploy iOS & Android with Bubble, Deep Awareness, and Companion.
+            </p>
+            <p className="text-white/90 text-xs font-semibold">
+              <span className="text-green-300">Goal:</span> Acquire 5K beta users and prove 30-day emotional engagement.
             </p>
           </div>
 
@@ -65,8 +71,11 @@ const Funding: React.FC = () => {
                 <p className="text-2xl font-bold text-purple-300">$200,000</p>
               </div>
             </div>
-            <p className="text-white/80 text-sm leading-relaxed">
-              App/web engineering, infrastructure, and deployment for a seamless user experience.
+            <p className="text-white/80 text-sm leading-relaxed mb-2">
+              Build web/mobile infrastructure and deploy full-stack emotional experiences.
+            </p>
+            <p className="text-white/90 text-xs font-semibold">
+              <span className="text-purple-300">Goal:</span> Achieve seamless app UX + scalable backend infra for 10K+ DAUs.
             </p>
           </div>
 
@@ -80,8 +89,11 @@ const Funding: React.FC = () => {
                 <p className="text-2xl font-bold text-orange-300">$75,000</p>
               </div>
             </div>
-            <p className="text-white/80 text-sm leading-relaxed">
-              Fund ambassador onboarding, creator outreach, waitlist, and marketing.
+            <p className="text-white/80 text-sm leading-relaxed mb-2">
+              Ambassador program, creator partnerships, waitlist expansion, and targeted launch.
+            </p>
+            <p className="text-white/90 text-xs font-semibold">
+              <span className="text-orange-300">Goal:</span> 25K+ waitlist signups and 500+ daily active testers.
             </p>
           </div>
 
@@ -91,12 +103,15 @@ const Funding: React.FC = () => {
                 <Brain className="w-6 h-6 text-indigo-300" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-white">NLP & Emotional R&D</h3>
+                <h3 className="text-lg font-semibold text-white">Emotional AI Research & Validation</h3>
                 <p className="text-2xl font-bold text-indigo-300">$25,000</p>
               </div>
             </div>
-            <p className="text-white/80 text-sm leading-relaxed">
-              Research, clinical advisors, and evaluation of emotional intelligence systems.
+            <p className="text-white/80 text-sm leading-relaxed mb-2">
+              Fund clinical advisors, research partnerships, and 3rd-party evaluation to benchmark emotional safety, impact, and model efficacy.
+            </p>
+            <p className="text-white/90 text-xs font-semibold">
+              <span className="text-indigo-300">Goal:</span> Publish internal whitepaper and safety benchmarking report.
             </p>
           </div>
 
@@ -105,12 +120,12 @@ const Funding: React.FC = () => {
               <div className="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <DollarSign className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Total Investment</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">Total</h3>
               <p className="text-3xl font-bold text-blue-300">
                 $1,000,000
               </p>
               <p className="text-white/80 text-sm mt-2">
-                Building the future of emotional AI
+                Bringing emotional intelligence to AI — safely, scalably, and responsibly.
               </p>
             </div>
           </div>
