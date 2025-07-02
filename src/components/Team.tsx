@@ -86,7 +86,7 @@ const Team: React.FC = () => {
                     <h3 className="text-xl font-bold text-white flex items-center">
                       <a href="https://www.linkedin.com/in/rosemarypv/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Rosemary Parades Vasquez <LinkedInIcon /></a>
                     </h3>
-                    <p className="text-white/80 text-sm">Founding Product Designer (Lubenia)</p>
+                    <p className="text-white/80 text-sm">Founding Product Designer (Bolivia)</p>
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80 text-sm mb-6">
