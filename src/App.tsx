@@ -1,5 +1,6 @@
 import React from 'react';
 import Hero, { MongoDBAccelerator } from './components/Hero';
+import Emolytics from './components/Emolytics';
 import Problem from './components/Problem';
 import Research from './components/Research';
 import Solution from './components/Solution';
@@ -12,6 +13,7 @@ function App() {
     <div className="min-h-screen">
       <Hero />
       <MongoDBAccelerator />
+      <Emolytics />
       <Problem />
       <Research />
       <Solution />
