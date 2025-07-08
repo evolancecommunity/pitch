@@ -60,7 +60,6 @@ const Team: React.FC = () => {
                 </div>
               </div>
               <ul className="space-y-2 text-white/80 text-sm mb-6">
-                <li>• Indian immigrant in the US</li>
                 <li>• Graduated CS with 3 internships in just 2 years</li>
                 <li>• Built multiple AI systems (LLM agents, voice bots, scraping infra)</li>
                 <li>• Accepted into the MongoDB Startup Accelerator</li>

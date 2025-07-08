@@ -12,11 +12,10 @@ function App() {
   return (
     <div className="min-h-screen">
       <Hero />
-      <MongoDBAccelerator />
-      <Emolytics />
       <Problem />
-      <Research />
       <Solution />
+      <Emolytics />
+      <Research />
       <Team />
       <Funding />
       <CTA />

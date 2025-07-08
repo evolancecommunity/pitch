@@ -36,9 +36,9 @@ const Hero: React.FC = () => {
             Evolance
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-4xl mx-auto leading-relaxed font-light">
-            The world's first <span className="font-semibold text-blue-300">emotionally intelligent AI platform</span> designed to help people 
-            <span className="font-semibold text-blue-300"> understand what they can't articulate</span>, process it, and 
-            <span className="font-semibold text-blue-300"> embrace their authentic selves</span>.
+            The world's first <span className="font-semibold text-blue-300">emotionally intelligent AI platform</span> that helps you 
+            <span className="font-semibold text-blue-300"> achieve emotional clarity</span>, make better decisions, and 
+            <span className="font-semibold text-blue-300"> unlock your full potential</span>.
           </p>
         </div>
 
@@ -49,15 +49,15 @@ const Hero: React.FC = () => {
             rel="noopener noreferrer"
             className="bg-white hover:bg-gray-50 text-slate-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center gap-3"
           >
-            Join the Waitlist
+            Start Your Journey
             <ArrowRight className="w-5 h-5" />
           </a>
           <p className="text-white/70 text-sm">
-            Invest in your emotional well-being
+            Transform your emotional intelligence today
           </p>
         </div>
 
-        {/* Key Features */}
+        {/* Key Goals */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="bg-white rounded-2xl p-8 shadow-2xl border-2 border-blue-200 hover:bg-blue-50 transition-all duration-300">
             <div className="flex items-center justify-center mb-6">
@@ -65,8 +65,8 @@ const Hero: React.FC = () => {
                 <Heart className="w-6 h-6 text-blue-700" />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Emotionally Present</h3>
-            <p className="text-slate-700 text-sm leading-relaxed font-medium">AI that truly listens and understands your inner world with genuine empathy</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Achieve Emotional Clarity</h3>
+            <p className="text-slate-700 text-sm leading-relaxed font-medium">Understand your emotions deeply and make confident life decisions</p>
           </div>
           
           <div className="bg-white rounded-2xl p-8 shadow-2xl border-2 border-purple-200 hover:bg-purple-50 transition-all duration-300">
@@ -75,8 +75,8 @@ const Hero: React.FC = () => {
                 <Brain className="w-6 h-6 text-purple-700" />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Identity Growth</h3>
-            <p className="text-slate-700 text-sm leading-relaxed font-medium">Structured journey from confusion to clarity and self-understanding</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Build Self-Mastery</h3>
+            <p className="text-slate-700 text-sm leading-relaxed font-medium">Develop emotional intelligence and unlock your authentic potential</p>
           </div>
           
           <div className="bg-white rounded-2xl p-8 shadow-2xl border-2 border-indigo-200 hover:bg-indigo-50 transition-all duration-300">
@@ -85,8 +85,8 @@ const Hero: React.FC = () => {
                 <Sparkles className="w-6 h-6 text-indigo-700" />
               </div>
             </div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Healing Focused</h3>
-            <p className="text-slate-700 text-sm leading-relaxed font-medium">Built to heal and support, not entertain or exploit</p>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Create Lasting Change</h3>
+            <p className="text-slate-700 text-sm leading-relaxed font-medium">Transform your life through evidence-based emotional healing</p>
           </div>
         </div>
       </div>
