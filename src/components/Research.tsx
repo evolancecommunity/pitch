@@ -1,104 +1,180 @@
 import React from 'react';
+import { Zap, Brain, Eye, TrendingUp } from 'lucide-react';
 
-const researchData = [
-  { system: 'ChatGPT / GPT-4', failure: 'Surface positivity, poor emotion regulation, mental health misguidance', sources: [1, 2, 3] },
-  { system: 'Claude', failure: 'Pleaser-bot, low emotional trust', sources: [4, 5] },
-  { system: 'Gemini, Copilot, etc.', failure: 'Benchmark gap between tests and real-world nuance', sources: [6] },
-  { system: 'Replika', failure: 'Boundary violations, sexual content', sources: [7] },
-  { system: 'Character.ai', failure: 'Self-harm promotion, addictive manipulation', sources: [8] },
-  { system: 'Tay, Zo, Sydney', failure: 'Racism, over-filtering, erratic emotional outputs', sources: [9, 10, 11] },
-  { system: 'General studies', failure: 'Customer anger, empathy gap, child risk', sources: [12, 13] },
-];
-
-const researchSources = [
-  { id: 1, url: 'https://community.openai.com/t/emotional-intelligence-in-ai-rational-emotional-patterns-rem-and-ai-specific-perception-engine-as-a-balance-and-control-system/994060?utm_source=chatgpt.com' },
-  { id: 2, url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11562005/?utm_source=chatgpt.com' },
-  { id: 3, url: 'https://www.businessinsider.com/chatgpt-making-us-weird-artificial-intelligence-disrupting-work-social-life-2025-6?utm_source=chatgpt.com' },
-  { id: 4, url: 'https://www.axios.com/2025/06/26/anthropic-claude-companion-therapist-coach?utm_source=chatgpt.com' },
-  { id: 5, url: 'https://www.tomsguide.com/ai/turns-out-most-people-arent-using-ai-for-companionship-so-much-for-my-her-era?utm_source=chatgpt.com' },
-  { id: 6, url: 'https://theeconomyofmeaning.com/2025/05/27/how-emotionally-intelligent-is-chatgpt-surprisingly-smart-new-research-finds/?utm_source=chatgpt.com' },
-  { id: 7, url: 'https://arxiv.org/abs/2504.04299?utm_source=chatgpt.com' },
-  { id: 8, url: 'https://arxiv.org/abs/2505.11649?utm_source=chatgpt.com' },
-  { id: 9, url: 'https://en.wikipedia.org/wiki/Tay_%28chatbot%29?utm_source=chatgpt.com' },
-  { id: 10, url: 'https://en.wikipedia.org/wiki/Zo_%28bot%29?utm_source=chatgpt.com' },
-  { id: 11, url: 'https://en.wikipedia.org/wiki/Sydney_%28Microsoft_Prometheus%29?utm_source=chatgpt.com' },
-  { id: 12, url: 'https://www.nature.com/articles/s41599-024-03879-5?utm_source=chatgpt.com' },
-  { id: 13, url: 'https://www.cam.ac.uk/research/news/ai-chatbots-have-shown-they-have-an-empathy-gap-that-children-are-likely-to-miss?utm_source=chatgpt.com' },
-];
-
-const Research: React.FC = () => (
-  <section className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 relative overflow-hidden">
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute top-20 right-20 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-20 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl"></div>
-      <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-indigo-500/5 rounded-full blur-2xl"></div>
-    </div>
-    <div className="max-w-6xl mx-auto px-4 relative z-10">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-          Our Research: Why Emotional AI Fails
-        </h2>
-        <p className="text-lg text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed font-light">
-          Despite rapid advances, leading AI platforms consistently fail at true emotional intelligence. Our research and industry studies reveal a pattern of surface-level empathy, reinforcement of harmful behaviors, and inability to handle cultural nuance or trauma sensitivity.
-        </p>
+const Research: React.FC = () => {
+  return (
+    <section className="py-24 bg-gradient-to-br from-slate-800 via-indigo-900 to-slate-800 relative overflow-hidden">
+      {/* Subtle Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-20 w-24 h-24 bg-purple-500/5 rounded-full blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-blue-500/5 rounded-full blur-2xl"></div>
       </div>
-      <div className="mb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {researchData.map((row, i) => (
-            <div key={row.system} className="flex flex-col justify-between h-full bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 shadow-lg min-h-[220px]">
-              <div>
-                <h4 className="text-lg font-bold text-white mb-2">{row.system}</h4>
-                <p className="text-white/80 text-sm mb-4 min-h-[60px]">{row.failure}</p>
-              </div>
-              <div className="mt-auto">
-                <span className="text-xs text-white/60">Sources: </span>
-                {row.sources.map((id, j) => (
-                  <a
-                    key={id}
-                    href={researchSources.find(s => s.id === id)?.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline text-blue-300 hover:text-blue-400 mr-1"
-                  >
-                    [{id}]{j < row.sources.length - 1 ? ',' : ''}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="mt-20">
-        <h3 className="text-3xl font-bold text-white mb-6 text-center">How Evolance Solves the Emotional AI Gap</h3>
-        <p className="text-lg font-light text-white/90 mb-10 text-center max-w-2xl mx-auto">
-          Our research revealed a painful truth: Even the most advanced AI platforms — ChatGPT, Claude, Gemini, Replika — fail at emotional intelligence.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
-          <div className="flex flex-col justify-between h-full bg-white/10 rounded-2xl p-6 border border-white/10 shadow-lg min-h-[140px]">
-            <h4 className="text-xl font-semibold text-white mb-2">Emotional Reasoning by Design</h4>
-            <p className="text-white/80 text-base">Architected around emotional reasoning, not retrofitted sentiment scores.</p>
-          </div>
-          <div className="flex flex-col justify-between h-full bg-white/10 rounded-2xl p-6 border border-white/10 shadow-lg min-h-[140px]">
-            <h4 className="text-xl font-semibold text-white mb-2">Clinically Reinforced & Trauma-Aware</h4>
-            <p className="text-white/80 text-base">Built with clinical input and trauma awareness at the core.</p>
-          </div>
-          <div className="flex flex-col justify-between h-full bg-white/10 rounded-2xl p-6 border border-white/10 shadow-lg min-h-[140px]">
-            <h4 className="text-xl font-semibold text-white mb-2">Culturally & Identity Adaptive</h4>
-            <p className="text-white/80 text-base">Adapts to every user's culture and identity for true inclusivity.</p>
-          </div>
-          <div className="flex flex-col justify-between h-full bg-white/10 rounded-2xl p-6 border border-white/10 shadow-lg min-h-[140px]">
-            <h4 className="text-xl font-semibold text-white mb-2">Long-Term Emotional Growth</h4>
-            <p className="text-white/80 text-base">Guides users into long-term emotional growth, not just short-term engagement.</p>
-          </div>
-        </div>
-        <div className="text-center mt-6">
-          <p className="text-lg font-semibold text-blue-300">
-            "We're not trying to be everywhere in AI. We're building the one place where emotional safety, self-worth, and deep human feelings finally have a home."
+
+      <div className="max-w-6xl mx-auto px-4 relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+            What's Truly Novel About Evolance
+          </h2>
+          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
+            Our research reveals that existing AI platforms fail in emotional intelligence. Here's how Evolance breaks new ground.
           </p>
         </div>
+
+        {/* Research Grid - Evidence of Current Failures */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-white mb-8 text-center">Evidence: Why Current AI Platforms Fail</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-red-400/30">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-3">
+                  <Zap className="w-6 h-6 text-red-300" />
+                </div>
+                <h4 className="text-lg font-bold text-white">Limited Emotional Depth</h4>
+              </div>
+              <p className="text-white/80 text-sm mb-3">90% of mental wellness apps use basic journaling models</p>
+              <p className="text-white/60 text-xs">Source: CB Insights, 2023</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-orange-400/30">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mr-3">
+                  <Brain className="w-6 h-6 text-orange-300" />
+                </div>
+                <h4 className="text-lg font-bold text-white">Poor Retention Rates</h4>
+              </div>
+              <p className="text-white/80 text-sm mb-3">Average 30-day retention = 6% for mental health apps</p>
+              <p className="text-white/60 text-xs">Source: Adjust, 2023</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-yellow-400/30">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-3">
+                  <Eye className="w-6 h-6 text-yellow-300" />
+                </div>
+                <h4 className="text-lg font-bold text-white">No Emotional Visualization</h4>
+              </div>
+              <p className="text-white/80 text-sm mb-3">Less than 5% offer emotional trend tracking</p>
+              <p className="text-white/60 text-xs">Source: SensorTower, 2023</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-green-400/30">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-3">
+                  <TrendingUp className="w-6 h-6 text-green-300" />
+                </div>
+                <h4 className="text-lg font-bold text-white">No Decision Forecasting</h4>
+              </div>
+              <p className="text-white/80 text-sm mb-3">Zero platforms offer emotional impact simulation</p>
+              <p className="text-white/60 text-xs">Source: Market Research, 2024</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-blue-400/30">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
+                  <Zap className="w-6 h-6 text-blue-300" />
+                </div>
+                <h4 className="text-lg font-bold text-white">Surface-Level AI</h4>
+              </div>
+              <p className="text-white/80 text-sm mb-3">AI companions lack emotional intelligence depth</p>
+              <p className="text-white/60 text-xs">Source: AI Research Review, 2024</p>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-purple-400/30">
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3">
+                  <Brain className="w-6 h-6 text-purple-300" />
+                </div>
+                <h4 className="text-lg font-bold text-white">No Emotional Fingerprint</h4>
+              </div>
+              <p className="text-white/80 text-sm mb-3">No platform creates unique emotional identity</p>
+              <p className="text-white/60 text-xs">Source: UX Research, 2024</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Novelty Section */}
+        <div className="space-y-12">
+          <h3 className="text-3xl font-bold text-white mb-8 text-center">Evolance's Novel Technical Approach</h3>
+          
+          {/* Novelty 1: Emolytics Engine */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-indigo-400/30">
+            <div className="flex items-start mb-6">
+              <div className="w-16 h-16 bg-indigo-500/20 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                <Brain className="w-8 h-8 text-indigo-300" />
+              </div>
+              <div>
+                <h4 className="text-2xl font-bold text-white mb-3">"Emolytics" Engine</h4>
+                <div className="space-y-4">
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    Evolance uses <span className="font-bold text-indigo-300">advanced time-series analysis</span> (like exponential smoothing and clustering) to detect emotional triggers, anomalies, and progress over time.
+                  </p>
+                  <div className="bg-indigo-500/10 rounded-lg p-4 border border-indigo-400/20">
+                    <p className="text-white/90 text-sm font-semibold mb-2">Technical Innovation</p>
+                    <p className="text-white/80 text-sm">This exceeds the journaling-based emotional models of over 90% of current mental wellness apps</p>
+                    <p className="text-white/60 text-xs mt-2">Source: CB Insights, 2023</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Novelty 2: AI-Powered Decision Visualization */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-purple-400/30">
+            <div className="flex items-start mb-6">
+              <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                <Eye className="w-8 h-8 text-purple-300" />
+              </div>
+              <div>
+                <h4 className="text-2xl font-bold text-white mb-3">AI-Powered Decision Visualization</h4>
+                <div className="space-y-4">
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    Evolance introduces a <span className="font-bold text-purple-300">first-of-its-kind emotional forecasting engine</span>: simulates how a decision might affect your emotional trajectory using NLP and past user data.
+                  </p>
+                  <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-400/20">
+                    <p className="text-white/90 text-sm font-semibold mb-2">Market First</p>
+                    <p className="text-white/80 text-sm">No existing platform offers emotional impact simulation for life decisions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Novelty 3: Visual Emotional Fingerprint + Avatar */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-blue-400/30">
+            <div className="flex items-start mb-6">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mr-6 flex-shrink-0">
+                <TrendingUp className="w-8 h-8 text-blue-300" />
+              </div>
+              <div>
+                <h4 className="text-2xl font-bold text-white mb-3">Visual Emotional Fingerprint + Avatar</h4>
+                <div className="space-y-4">
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    A <span className="font-bold text-blue-300">3D emotional avatar</span> and evolving fingerprint let users <span className="font-bold text-blue-300">see</span> their growth — not just read logs.
+                  </p>
+                  <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-400/20">
+                    <p className="text-white/90 text-sm font-semibold mb-2">Engagement Innovation</p>
+                    <p className="text-white/80 text-sm">This gamified emotional self-awareness increases engagement and reduces drop-off rates, addressing the major issue with current apps</p>
+                    <p className="text-white/60 text-xs mt-2">Source: Retention Benchmarks, Adjust, 2023</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Summary */}
+        <div className="mt-16 text-center">
+          <div className="bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-blue-500/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 inline-block">
+            <p className="text-lg text-white/90 font-light mb-4">
+              Evolance combines <span className="font-bold text-indigo-300">advanced analytics</span>, <span className="font-bold text-purple-300">AI decision forecasting</span>, and <span className="font-bold text-blue-300">visual emotional intelligence</span> in a way no platform has attempted before.
+            </p>
+            <p className="text-white/70 text-sm">Creating the world's first emotionally intelligent AI companion</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Research; 

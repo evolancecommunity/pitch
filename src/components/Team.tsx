@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Code, Palette } from 'lucide-react';
+import { Globe, Code, Palette, Users } from 'lucide-react';
 
 type LinkedInIconProps = { className?: string };
 const LinkedInIcon: React.FC<LinkedInIconProps> = ({ className = "inline ml-2 mb-1" }) => (
@@ -22,11 +22,11 @@ const Team: React.FC = () => {
             Meet the minds behind Evolance
           </h2>
           <p className="text-lg text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
-            We're a global, all-immigrant founding team, building Evolance from lived experience — not theory.
+            We're building Evolance from lived experience — not theory.
           </p>
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-white inline-block border border-white/10">
             <p className="text-lg font-light">
-              Together, we represent four countries, three engineering disciplines, and one mission:<br/>
+              Our mission:<br/>
               <span className="font-semibold text-blue-300">To build AI that doesn't just understand humans — but heals them.</span>
             </p>
           </div>
@@ -45,86 +45,82 @@ const Team: React.FC = () => {
             </div>
           </div>
 
-          {/* Team Members - Three in a row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Indraneel - Founder & CEO */}
-            <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-blue-400/30 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center mb-4">
-                  <div className="w-14 h-14 bg-blue-500/20 rounded-xl flex items-center justify-center mr-4">
-                    <Globe className="w-7 h-7 text-blue-300" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white flex items-center">
-                      <a href="https://www.linkedin.com/in/indraneel24/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Indraneel Bhattacharjee <LinkedInIcon /></a>
-                    </h3>
-                    <p className="text-white/80 text-sm">Founder & CEO (India)</p>
-                  </div>
+          {/* Team Tree Structure */}
+          <div className="flex flex-col items-center space-y-8">
+            {/* Indraneel - Founder & CEO (Top) */}
+            <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-blue-400/30 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 w-full max-w-2xl">
+              <div className="flex items-center mb-4">
+                <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mr-6">
+                  <Globe className="w-8 h-8 text-blue-300" />
                 </div>
-                <ul className="space-y-2 text-white/80 text-sm mb-6">
-                  <li>• Indian immigrant on OPT</li>
-                  <li>• Graduated CS with 3 internships in just 2 years</li>
-                  <li>• Built multiple AI systems (LLM agents, voice bots, scraping infra)</li>
-                  <li>• Accepted into the MongoDB Startup Accelerator</li>
-                </ul>
-                <blockquote className="bg-blue-100/10 rounded-lg p-4 border-l-4 border-blue-400">
-                  <p className="text-white/90 italic text-sm">
-                    "I didn't build Evolance for users. I built it for the kid I used to be — overwhelmed, invisible, and still trying to survive."
-                  </p>
-                </blockquote>
+                <div>
+                  <h3 className="text-2xl font-bold text-white flex items-center">
+                    <a href="https://www.linkedin.com/in/indraneel24/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Indraneel Bhattacharjee <LinkedInIcon /></a>
+                  </h3>
+                  <p className="text-white/80 text-lg">Founder & CEO (India)</p>
+                </div>
               </div>
+              <ul className="space-y-2 text-white/80 text-sm mb-6">
+                <li>• Indian immigrant on OPT</li>
+                <li>• Graduated CS with 3 internships in just 2 years</li>
+                <li>• Built multiple AI systems (LLM agents, voice bots, scraping infra)</li>
+                <li>• Accepted into the MongoDB Startup Accelerator</li>
+              </ul>
+              <blockquote className="bg-blue-100/10 rounded-lg p-4 border-l-4 border-blue-400">
+                <p className="text-white/90 italic text-sm">
+                  "I didn't build Evolance for users. I built it for the kid I used to be — overwhelmed, invisible, and still trying to survive."
+                </p>
+              </blockquote>
             </div>
 
-            {/* Rosemary - Designer */}
-            <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-purple-400/30 hover:border-purple-500 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center mb-4">
-                  <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mr-4">
-                    <Palette className="w-7 h-7 text-purple-300" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-white flex items-center">
-                      <a href="https://www.linkedin.com/in/rosemarypv/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Rosemary Parades Vasquez <LinkedInIcon /></a>
-                    </h3>
-                    <p className="text-white/80 text-sm">Founding Product Designer (Bolivia)</p>
-                  </div>
-                </div>
-                <ul className="space-y-2 text-white/80 text-sm mb-6">
-                  <li>• Human-centered designer with deep focus on emotional UX</li>
-                  <li>• Designed Evolance's bubble experience and deep awareness journey</li>
-                  <li>• Specializes in creating interfaces that support stillness, reflection, and safety</li>
-                </ul>
-                <blockquote className="bg-purple-100/10 rounded-lg p-4 border-l-4 border-purple-400">
-                  <p className="text-white/90 italic text-sm">
-                    "Design is about creating space for people to feel safe being themselves. Evolance is my way of making that space real."
-                  </p>
-                </blockquote>
-              </div>
-            </div>
+            {/* Connection Line */}
+            <div className="w-px h-12 bg-gradient-to-b from-blue-400/50 to-transparent"></div>
 
-            {/* Kyle - Engineer */}
-            <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-indigo-400/30 hover:border-indigo-500 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
-              <div>
+            {/* Two Branches */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+              {/* Engineers Branch */}
+              <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-indigo-400/30 hover:border-indigo-500 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-4">
                   <div className="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center mr-4">
-                    <Code className="w-7 h-7 text-indigo-300" />
+                    <Users className="w-7 h-7 text-indigo-300" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white flex items-center">
-                      <a href="https://www.linkedin.com/in/kyle-padayachee/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Kyle Padayachee <LinkedInIcon /></a>
-                    </h3>
-                    <p className="text-white/80 text-sm">Founding Engineer (South Africa)</p>
+                    <h3 className="text-xl font-bold text-white">Engineering Team</h3>
+                    <p className="text-white/80 text-sm">Full-stack & AI Development</p>
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80 text-sm mb-6">
-                  <li>• Full-stack engineer: frontend, backend, and AI systems</li>
+                  <li>• Full-stack engineers: frontend, backend, and AI systems</li>
                   <li>• Built the AI Companion interface, Verified Feed, and session tracking logic</li>
                   <li>• Developed emotional To-Do generators and growth feedback systems</li>
                   <li>• Focuses on secure emotional data handling and high-performance, emotionally responsive UI</li>
                 </ul>
                 <blockquote className="bg-indigo-100/10 rounded-lg p-4 border-l-4 border-indigo-400">
                   <p className="text-white/90 italic text-sm">
-                    "I believe in building products that make people feel seen and safe. From backend AI to the UI you touch, Evolance is the most meaningful code I've ever written."
+                    "We believe in building products that make people feel seen and safe. From backend AI to the UI you touch, Evolance is the most meaningful code we've ever written."
+                  </p>
+                </blockquote>
+              </div>
+
+              {/* Designer Branch */}
+              <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-purple-400/30 hover:border-purple-500 hover:shadow-2xl transition-all duration-300">
+                <div className="flex items-center mb-4">
+                  <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mr-4">
+                    <Palette className="w-7 h-7 text-purple-300" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Design Team</h3>
+                    <p className="text-white/80 text-sm">Product & UX Design</p>
+                  </div>
+                </div>
+                <ul className="space-y-2 text-white/80 text-sm mb-6">
+                  <li>• Human-centered designers with deep focus on emotional UX</li>
+                  <li>• Designed Evolance's bubble experience and deep awareness journey</li>
+                  <li>• Specializes in creating interfaces that support stillness, reflection, and safety</li>
+                </ul>
+                <blockquote className="bg-purple-100/10 rounded-lg p-4 border-l-4 border-purple-400">
+                  <p className="text-white/90 italic text-sm">
+                    "Design is about creating space for people to feel safe being themselves. Evolance is our way of making that space real."
                   </p>
                 </blockquote>
               </div>
