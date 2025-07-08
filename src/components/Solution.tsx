@@ -14,10 +14,10 @@ const Solution: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Evolance's 3-Part Solution
+            Our Solution
           </h2>
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
-            A comprehensive platform that combines emotional analytics, AI decision forecasting, and always-on support to create the world's first emotionally intelligent AI companion.
+            Three integrated components that create the world's first emotionally intelligent AI companion.
           </p>
         </div>
 
@@ -34,11 +34,11 @@ const Solution: React.FC = () => {
             <div className="space-y-4">
               <div className="bg-green-500/10 rounded-lg p-4 border border-green-400/20">
                 <p className="text-white/90 text-sm font-semibold mb-2">Live Emotional Analytics</p>
-                <p className="text-white/80 text-sm">Users get a live dashboard showing emotional trends, dominant states, and triggers using time-series data</p>
+                <p className="text-white/80 text-sm">Real-time dashboard showing emotional trends, triggers, and patterns</p>
               </div>
               <div className="bg-green-500/5 rounded-lg p-4 border border-green-400/10">
-                <p className="text-white/90 text-sm font-semibold mb-2">Emotional Fingerprint</p>
-                <p className="text-white/80 text-sm">Evolves into a unique fingerprint that reflects growth, patterns, and self-awareness over time</p>
+                <p className="text-white/90 text-sm font-semibold mb-2">Personal Fingerprint</p>
+                <p className="text-white/80 text-sm">Unique emotional identity that evolves with your growth</p>
               </div>
             </div>
           </div>
@@ -49,16 +49,16 @@ const Solution: React.FC = () => {
               <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mr-4">
                 <Brain className="w-8 h-8 text-blue-300" />
               </div>
-              <h3 className="text-2xl font-bold text-white">AI Avatar + Decision Forecasting</h3>
+              <h3 className="text-2xl font-bold text-white">AI Decision Forecasting</h3>
             </div>
             <div className="space-y-4">
               <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-400/20">
-                <p className="text-white/90 text-sm font-semibold mb-2">3D Emotional Visualization</p>
-                <p className="text-white/80 text-sm">3D or dynamic avatar reflects real-time emotional states — backed by interaction data</p>
+                <p className="text-white/90 text-sm font-semibold mb-2">3D Emotional Avatar</p>
+                <p className="text-white/80 text-sm">Visual representation of your emotional state in real-time</p>
               </div>
               <div className="bg-blue-500/5 rounded-lg p-4 border border-blue-400/10">
                 <p className="text-white/90 text-sm font-semibold mb-2">Decision Impact Simulation</p>
-                <p className="text-white/80 text-sm">Users can simulate the emotional impact of major decisions using AI-trained models on historical sentiment</p>
+                <p className="text-white/80 text-sm">See how life decisions might affect your emotional trajectory</p>
               </div>
             </div>
           </div>
@@ -69,16 +69,16 @@ const Solution: React.FC = () => {
               <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mr-4">
                 <MessageCircle className="w-8 h-8 text-purple-300" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Private, Always-On AI Support</h3>
+              <h3 className="text-2xl font-bold text-white">24/7 AI Companion</h3>
             </div>
             <div className="space-y-4">
               <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-400/20">
-                <p className="text-white/90 text-sm font-semibold mb-2">Non-Judgmental Companion</p>
-                <p className="text-white/80 text-sm">A non-judgmental, always-available AI chat experience with intelligent prompts and support strategies</p>
+                <p className="text-white/90 text-sm font-semibold mb-2">Non-Judgmental Support</p>
+                <p className="text-white/80 text-sm">Always-available AI chat with intelligent emotional guidance</p>
               </div>
               <div className="bg-purple-500/5 rounded-lg p-4 border border-purple-400/10">
-                <p className="text-white/90 text-sm font-semibold mb-2">Hyper-Personalized Learning</p>
-                <p className="text-white/80 text-sm">Learns from user patterns and adapts — creating hyper-personalized emotional support</p>
+                <p className="text-white/90 text-sm font-semibold mb-2">Personalized Learning</p>
+                <p className="text-white/80 text-sm">Adapts to your patterns for truly personalized support</p>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ const Solution: React.FC = () => {
 
         {/* Feature Comparison Table */}
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">How Evolance Stands Apart</h3>
+          <h3 className="text-3xl font-bold text-white mb-8 text-center">How We're Different</h3>
           
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -94,38 +94,26 @@ const Solution: React.FC = () => {
                 <tr className="border-b border-white/20">
                   <th className="text-left py-4 px-4 text-white/90 font-semibold">Feature</th>
                   <th className="text-center py-4 px-4 text-white/90 font-semibold">Evolance</th>
-                  <th className="text-center py-4 px-4 text-white/70 font-semibold">Mood Trackers (e.g., Daylio)</th>
-                  <th className="text-center py-4 px-4 text-white/70 font-semibold">AI Companions (e.g., Replika)</th>
+                  <th className="text-center py-4 px-4 text-white/70 font-semibold">Mood Trackers</th>
+                  <th className="text-center py-4 px-4 text-white/70 font-semibold">AI Companions</th>
                 </tr>
               </thead>
               <tbody className="space-y-2">
                 <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 text-white/90 font-medium">Emotional Analytics Dashboard</td>
+                  <td className="py-4 px-4 text-white/90 font-medium">Emotional Analytics</td>
                   <td className="py-4 px-4 text-center">
                     <Check className="w-5 h-5 text-green-400 mx-auto" />
                   </td>
                   <td className="py-4 px-4 text-center">
                     <X className="w-5 h-5 text-red-400 mx-auto" />
-                    <span className="text-white/60 text-xs block">basic charts only</span>
+                    <span className="text-white/60 text-xs block">basic charts</span>
                   </td>
                   <td className="py-4 px-4 text-center">
                     <X className="w-5 h-5 text-red-400 mx-auto" />
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 text-white/90 font-medium">AI-Driven Decision Forecasting</td>
-                  <td className="py-4 px-4 text-center">
-                    <Check className="w-5 h-5 text-green-400 mx-auto" />
-                  </td>
-                  <td className="py-4 px-4 text-center">
-                    <X className="w-5 h-5 text-red-400 mx-auto" />
-                  </td>
-                  <td className="py-4 px-4 text-center">
-                    <X className="w-5 h-5 text-red-400 mx-auto" />
-                  </td>
-                </tr>
-                <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 text-white/90 font-medium">3D Avatar Emotional Visualization</td>
+                  <td className="py-4 px-4 text-white/90 font-medium">Decision Forecasting</td>
                   <td className="py-4 px-4 text-center">
                     <Check className="w-5 h-5 text-green-400 mx-auto" />
                   </td>
@@ -137,20 +125,7 @@ const Solution: React.FC = () => {
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 text-white/90 font-medium">Adaptive AI Emotional Companion</td>
-                  <td className="py-4 px-4 text-center">
-                    <Check className="w-5 h-5 text-green-400 mx-auto" />
-                  </td>
-                  <td className="py-4 px-4 text-center">
-                    <X className="w-5 h-5 text-red-400 mx-auto" />
-                  </td>
-                  <td className="py-4 px-4 text-center">
-                    <Check className="w-5 h-5 text-green-400 mx-auto" />
-                    <span className="text-white/60 text-xs block">limited personalization</span>
-                  </td>
-                </tr>
-                <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 text-white/90 font-medium">Personalized Emotional Fingerprint</td>
+                  <td className="py-4 px-4 text-white/90 font-medium">3D Emotional Avatar</td>
                   <td className="py-4 px-4 text-center">
                     <Check className="w-5 h-5 text-green-400 mx-auto" />
                   </td>
@@ -162,7 +137,20 @@ const Solution: React.FC = () => {
                   </td>
                 </tr>
                 <tr className="border-b border-white/10">
-                  <td className="py-4 px-4 text-white/90 font-medium">Premium Adult-Oriented UI</td>
+                  <td className="py-4 px-4 text-white/90 font-medium">Adaptive AI Companion</td>
+                  <td className="py-4 px-4 text-center">
+                    <Check className="w-5 h-5 text-green-400 mx-auto" />
+                  </td>
+                  <td className="py-4 px-4 text-center">
+                    <X className="w-5 h-5 text-red-400 mx-auto" />
+                  </td>
+                  <td className="py-4 px-4 text-center">
+                    <Check className="w-5 h-5 text-green-400 mx-auto" />
+                    <span className="text-white/60 text-xs block">limited</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10">
+                  <td className="py-4 px-4 text-white/90 font-medium">Emotional Fingerprint</td>
                   <td className="py-4 px-4 text-center">
                     <Check className="w-5 h-5 text-green-400 mx-auto" />
                   </td>
@@ -174,7 +162,7 @@ const Solution: React.FC = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="py-4 px-4 text-white/90 font-medium">Privacy-First AI Architecture</td>
+                  <td className="py-4 px-4 text-white/90 font-medium">Privacy-First Design</td>
                   <td className="py-4 px-4 text-center">
                     <Check className="w-5 h-5 text-green-400 mx-auto" />
                   </td>
@@ -191,9 +179,9 @@ const Solution: React.FC = () => {
 
           <div className="mt-8 text-center">
             <div className="bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-white/10">
-              <p className="text-lg text-white/90 font-semibold mb-2">Differentiator Summary</p>
+              <p className="text-lg text-white/90 font-semibold mb-2">Key Differentiator</p>
               <p className="text-white/80 text-sm">
-                Evolance combines <span className="font-bold text-green-300">analytics</span>, <span className="font-bold text-blue-300">AI decision forecasting</span>, and <span className="font-bold text-purple-300">emotionally intelligent visualization</span> — a triple-layered solution that no other platform offers as a unified experience.
+                Only Evolance combines <span className="font-bold text-green-300">analytics</span>, <span className="font-bold text-blue-300">decision forecasting</span>, and <span className="font-bold text-purple-300">visual emotional intelligence</span> in one platform.
               </p>
             </div>
           </div>
