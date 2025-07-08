@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe, Code, Palette, Users } from 'lucide-react';
+import { Globe, Code, Palette } from 'lucide-react';
 
 type LinkedInIconProps = { className?: string };
 const LinkedInIcon: React.FC<LinkedInIconProps> = ({ className = "inline ml-2 mb-1" }) => (
@@ -76,51 +76,51 @@ const Team: React.FC = () => {
             {/* Connection Line */}
             <div className="w-px h-12 bg-gradient-to-b from-blue-400/50 to-transparent"></div>
 
-            {/* Two Branches */}
+            {/* Two Team Members */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
-              {/* Engineers Branch */}
+              {/* Engineer Member */}
               <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-indigo-400/30 hover:border-indigo-500 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-4">
                   <div className="w-14 h-14 bg-indigo-500/20 rounded-xl flex items-center justify-center mr-4">
-                    <Users className="w-7 h-7 text-indigo-300" />
+                    <Code className="w-7 h-7 text-indigo-300" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">Engineering Team</h3>
-                    <p className="text-white/80 text-sm">Full-stack & AI Development</p>
+                    <h3 className="text-xl font-bold text-white">Kyle Padayachee</h3>
+                    <p className="text-white/80 text-sm">Lead Engineer (South Africa)</p>
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80 text-sm mb-6">
-                  <li>• Full-stack engineers: frontend, backend, and AI systems</li>
+                  <li>• Full-stack engineer: frontend, backend, and AI systems</li>
                   <li>• Built the AI Companion interface, Verified Feed, and session tracking logic</li>
                   <li>• Developed emotional To-Do generators and growth feedback systems</li>
-                  <li>• Focuses on secure emotional data handling and high-performance, emotionally responsive UI</li>
+                  <li>• Focuses on secure emotional data handling and high-performance UI</li>
                 </ul>
                 <blockquote className="bg-indigo-100/10 rounded-lg p-4 border-l-4 border-indigo-400">
                   <p className="text-white/90 italic text-sm">
-                    "We believe in building products that make people feel seen and safe. From backend AI to the UI you touch, Evolance is the most meaningful code we've ever written."
+                    "I believe in building products that make people feel seen and safe. From backend AI to the UI you touch, Evolance is the most meaningful code I've ever written."
                   </p>
                 </blockquote>
               </div>
 
-              {/* Designer Branch */}
+              {/* Designer Member */}
               <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-purple-400/30 hover:border-purple-500 hover:shadow-2xl transition-all duration-300">
                 <div className="flex items-center mb-4">
                   <div className="w-14 h-14 bg-purple-500/20 rounded-xl flex items-center justify-center mr-4">
                     <Palette className="w-7 h-7 text-purple-300" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">Design Team</h3>
-                    <p className="text-white/80 text-sm">Product & UX Design</p>
+                    <h3 className="text-xl font-bold text-white">Rosemary Parades Vasquez</h3>
+                    <p className="text-white/80 text-sm">Lead Designer (Bolivia)</p>
                   </div>
                 </div>
                 <ul className="space-y-2 text-white/80 text-sm mb-6">
-                  <li>• Human-centered designers with deep focus on emotional UX</li>
+                  <li>• Human-centered designer with deep focus on emotional UX</li>
                   <li>• Designed Evolance's bubble experience and deep awareness journey</li>
                   <li>• Specializes in creating interfaces that support stillness, reflection, and safety</li>
                 </ul>
                 <blockquote className="bg-purple-100/10 rounded-lg p-4 border-l-4 border-purple-400">
                   <p className="text-white/90 italic text-sm">
-                    "Design is about creating space for people to feel safe being themselves. Evolance is our way of making that space real."
+                    "Design is about creating space for people to feel safe being themselves. Evolance is my way of making that space real."
                   </p>
                 </blockquote>
               </div>
