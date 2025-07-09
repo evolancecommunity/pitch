@@ -14,10 +14,10 @@ const Funding: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Fundraising
+            Invest in Evolance
           </h2>
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
-            Pre-seed round to build the world's first emotionally intelligent AI companion.
+            Be part of the next wave in emotionally intelligent technology. Evolance is building the world’s first platform that combines emotional analytics, decision forecasting, and adaptive AI support—empowering people to truly understand and grow their emotional lives.
           </p>
         </div>
 
@@ -63,46 +63,70 @@ const Funding: React.FC = () => {
           </div>
         </div>
 
-        {/* Use of Funds */}
-        <div className="mb-20">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">Use of Funds ($1M)</h3>
+        {/* Business Model & Pricing */}
+        <div className="mb-20 mt-20">
+          <h3 className="text-3xl font-bold text-white mb-8 text-center">Business Model & Pricing</h3>
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-white/20">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-8 h-8 text-green-300" />
-                </div>
-                <p className="text-2xl font-bold text-green-300 mb-2">$600K</p>
-                <p className="text-white/90 text-sm font-semibold">AI Model Development</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-emerald-300" />
-                </div>
-                <p className="text-2xl font-bold text-emerald-300 mb-2">$300K</p>
-                <p className="text-white/90 text-sm font-semibold">Product & Team</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-teal-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-8 h-8 text-teal-300" />
-                </div>
-                <p className="text-2xl font-bold text-teal-300 mb-2">$100K</p>
-                <p className="text-white/90 text-sm font-semibold">Launch & Marketing</p>
-              </div>
+            <div className="overflow-x-auto">
+              <table className="min-w-full text-white text-center border-separate border-spacing-y-2">
+                <thead>
+                  <tr className="bg-slate-900/60">
+                    <th className="py-3 px-4 font-bold">Plan</th>
+                    <th className="py-3 px-4 font-bold">Price (Monthly)</th>
+                    <th className="py-3 px-4 font-bold">Price (Yearly)</th>
+                    <th className="py-3 px-4 font-bold">Features</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-slate-800/60">
+                    <td className="py-3 px-4 font-semibold">Free Trial</td>
+                    <td className="py-3 px-4">$0 (1 month)</td>
+                    <td className="py-3 px-4">-</td>
+                    <td className="py-3 px-4">All features, cancel anytime</td>
+                  </tr>
+                  <tr className="bg-slate-800/40">
+                    <td className="py-3 px-4 font-semibold">Pro</td>
+                    <td className="py-3 px-4">$13.99/mo</td>
+                    <td className="py-3 px-4">$139.99/year</td>
+                    <td className="py-3 px-4">Core features, standard analytics</td>
+                  </tr>
+                  <tr className="bg-slate-800/60">
+                    <td className="py-3 px-4 font-semibold">Plus</td>
+                    <td className="py-3 px-4">$17.99/mo</td>
+                    <td className="py-3 px-4">$179.99/year</td>
+                    <td className="py-3 px-4">Pro + advanced analytics, priority, export</td>
+                  </tr>
+                  <tr className="bg-slate-800/40">
+                    <td className="py-3 px-4 font-semibold">B2B</td>
+                    <td className="py-3 px-4">Custom</td>
+                    <td className="py-3 px-4">Custom</td>
+                    <td className="py-3 px-4">Team dashboard, API, admin, onboarding</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-8 text-white/90 text-base space-y-2 text-center">
+              <div><span className="font-bold">1 month free trial</span> for all users</div>
+              <div>No commitment, <span className="font-bold">cancel anytime</span></div>
+              <div>Pro & Plus plans unlock advanced analytics and support</div>
+              <div>B2B SaaS: <span className="font-bold">Custom pricing</span> for organizations (future)</div>
+              <div>Simple, transparent, scalable</div>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center">
-          <div className="bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-teal-500/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 inline-block">
-            <p className="text-lg text-white/90 font-light mb-4">
-              Ready to invest in the future of emotionally intelligent AI?
-            </p>
-            <p className="text-white/70 text-sm">Join us in building the world's first AI companion that truly understands human emotions</p>
-          </div>
+        {/* Vision & Differentiator - Hero style */}
+        <div className="mt-24 mb-24 text-center">
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight w-full">
+            Invest in Evolance
+          </h2>
+          <p className="text-lg md:text-xl text-white/90 mb-10 max-w-5xl mx-auto leading-relaxed font-light">
+            Be part of the next wave in emotionally intelligent technology.<br />
+            Evolance is building the world’s first platform that combines <span className="font-semibold text-green-300">emotional analytics</span>, <span className="font-semibold text-blue-300">decision forecasting</span>, and <span className="font-semibold text-purple-300">adaptive AI support</span>—empowering people to truly understand and grow their emotional lives.
+          </p>
+          <a href="mailto:founder@evolance.info" className="bg-white hover:bg-gray-50 text-slate-900 px-10 py-5 rounded-lg font-semibold text-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center gap-3">
+            Contact Us
+          </a>
         </div>
       </div>
     </section>

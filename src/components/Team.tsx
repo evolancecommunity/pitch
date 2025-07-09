@@ -24,51 +24,26 @@ const Team: React.FC = () => {
           <p className="text-lg text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed font-light">
             Building Evolance from lived experience — not theory.
           </p>
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 text-white inline-block border border-white/10">
-            <p className="text-lg font-light">
-              Our mission:<br/>
-              <span className="font-semibold text-blue-300">To build AI that doesn't just understand humans — but heals them.</span>
-            </p>
-          </div>
         </div>
-
-        <div className="space-y-8">
-          {/* Evolance Company Card - Full Width */}
-          <div className="backdrop-blur-md bg-gradient-to-br from-indigo-700/60 via-purple-700/60 to-blue-700/60 rounded-2xl p-10 shadow-2xl border border-white/20 flex flex-col justify-between items-center w-full">
-            <div className="flex flex-col items-center">
-              <h3 className="text-3xl font-extrabold text-white mb-2 flex items-center drop-shadow-lg tracking-wide">
-                Evolance
-                <a href="https://www.linkedin.com/company/theempoweredcommunity" target="_blank" rel="noopener noreferrer" className="ml-2 hover:underline"><LinkedInIcon className="w-7 h-7 text-blue-300 drop-shadow" /></a>
-              </h3>
-              <p className="text-white/90 text-center mb-6 font-medium text-lg max-w-2xl">Follow us on LinkedIn for updates, stories, and opportunities to join our mission.</p>
-              <a href="https://www.linkedin.com/company/theempoweredcommunity" target="_blank" rel="noopener noreferrer" className="inline-block bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold px-8 py-3 rounded-full shadow-lg transition-all duration-200 text-lg tracking-wide drop-shadow-lg">Follow us on LinkedIn</a>
+        <div className="flex justify-center gap-8 mt-8 mb-8">
+          <div className="bg-white/5 rounded-2xl p-6 shadow-xl border border-white/10 hover:border-blue-400/30 transition-all duration-300 w-full max-w-3xl flex flex-col md:flex-row items-start gap-6">
+            <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center mr-0 md:mr-6 mb-4 md:mb-0">
+              <Globe className="w-8 h-8 text-blue-300" />
             </div>
-          </div>
-
-          {/* Indraneel - Founder & CEO */}
-          <div className="flex justify-center">
-            <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-blue-400/30 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 w-full max-w-2xl">
-              <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mr-6">
-                  <Globe className="w-8 h-8 text-blue-300" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white flex items-center">
-                    <a href="https://www.linkedin.com/in/indraneel24/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Indraneel Bhattacharjee <LinkedInIcon /></a>
-                  </h3>
-                  <p className="text-white/80 text-lg">Founder & CEO (US)</p>
-                </div>
-              </div>
-              <ul className="space-y-2 text-white/80 text-sm mb-6">
-                <li>• Graduated CS with 3 internships in just 2 years</li>
-                <li>• Built multiple AI systems (LLM agents, voice bots, scraping infra)</li>
-                <li>• Accepted into the MongoDB Startup Accelerator</li>
+            <div>
+              <h3 className="text-xl font-bold text-white mb-3 flex items-center">
+                <a href="https://www.linkedin.com/in/indraneel24/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center">Indraneel Bhattacharjee <LinkedInIcon /></a>
+              </h3>
+              <div className="mb-3" />
+              <p className="text-white text-base mb-4 leading-relaxed font-normal">Founder & CEO (US)</p>
+              <div className="mb-3" />
+              <p className="text-white/80 text-lg mb-4 leading-relaxed font-light">Indraneel is a builder, engineer, and founder passionate about emotional intelligence and AI. He created Evolance to help people process what they can't articulate and find clarity in their lives.</p>
+              <div className="mb-3" />
+              <ul className="space-y-4 text-white/80 text-base mb-0 list-disc list-inside leading-relaxed">
+                <li>Graduated CS with 3 internships in just 2 years</li>
+                <li>Built multiple AI systems (LLM agents, voice bots, scraping infra)</li>
+                <li>Accepted into the MongoDB Startup Accelerator</li>
               </ul>
-              <blockquote className="bg-blue-100/10 rounded-lg p-4 border-l-4 border-blue-400">
-                <p className="text-white/90 italic text-sm">
-                  "I didn't build Evolance for users. I built it for the kid I used to be — overwhelmed, invisible, and still trying to survive."
-                </p>
-              </blockquote>
             </div>
           </div>
         </div>
