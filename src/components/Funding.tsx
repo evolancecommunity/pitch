@@ -44,7 +44,7 @@ const Funding: React.FC = () => {
             <h3 className="text-2xl font-bold text-white mb-6 text-center">Early Traction</h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center">
-                <p className="text-2xl font-bold text-emerald-300 mb-2">26</p>
+                <p className="text-2xl font-bold text-emerald-300 mb-2">28</p>
                 <p className="text-white/90 text-sm">Waitlist Signups</p>
               </div>
               <div className="text-center">

@@ -7,6 +7,8 @@ import Solution from './components/Solution';
 import Team from './components/Team';
 import Funding from './components/Funding';
 import CTA from './components/CTA';
+import HowWeAreDifferent from './components/HowWeAreDifferent';
+import WhyNow from './components/WhyNow';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Solution />
       <Emolytics />
       <Research />
+      <HowWeAreDifferent />
+      <WhyNow />
       <Team />
       <Funding />
       <CTA />
