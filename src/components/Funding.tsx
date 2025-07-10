@@ -56,8 +56,8 @@ const Funding: React.FC = () => {
                 <p className="text-white/90 text-sm">Accelerators</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-purple-300 mb-2">MVP v1</p>
-                <p className="text-white/90 text-sm">Product Ready</p>
+                <p className="text-2xl font-bold text-purple-300 mb-2">Prototype</p>
+                <p className="text-white/90 text-sm">In Development</p>
               </div>
             </div>
           </div>
