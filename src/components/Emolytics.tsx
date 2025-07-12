@@ -1,27 +1,66 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Brush
 } from 'recharts';
+import InteractiveAvatar, { EvIcon, EvBubble } from './InteractiveAvatar';
+import avatar from '../assets/avatar.png';
+import '../EmolyticsAnimations.css';
 
 // Example data for each emotion
 const emotionData = {
   Joy: [
-    { date: 'Jun 24', value: 60 }, { date: 'Jun 26', value: 70 }, { date: 'Jun 28', value: 50 }, { date: 'Jul 1', value: 80 }, { date: 'Jul 3', value: 90 }, { date: 'Jul 5', value: 75 }, { date: 'Jul 7', value: 85 }
+    { date: 'Jun 24', intensity: 60, trigger: 'Morning walk', reasoning: 'Fresh air boosted mood' },
+    { date: 'Jun 26', intensity: 70, trigger: 'Team lunch', reasoning: 'Positive social interaction' },
+    { date: 'Jun 28', intensity: 50, trigger: 'Work deadline', reasoning: 'Mild stress reduced joy' },
+    { date: 'Jul 1', intensity: 80, trigger: 'Job offer', reasoning: 'Excitement about new opportunity' },
+    { date: 'Jul 3', intensity: 90, trigger: 'Family call', reasoning: 'Supportive conversation' },
+    { date: 'Jul 5', intensity: 75, trigger: 'Gym session', reasoning: 'Physical activity uplifted mood' },
+    { date: 'Jul 7', intensity: 85, trigger: 'Weekend trip', reasoning: 'Relaxation and fun' }
   ],
   Sadness: [
-    { date: 'Jun 24', value: 40 }, { date: 'Jun 26', value: 35 }, { date: 'Jun 28', value: 50 }, { date: 'Jul 1', value: 30 }, { date: 'Jul 3', value: 20 }, { date: 'Jul 5', value: 25 }, { date: 'Jul 7', value: 15 }
+    { date: 'Jun 24', intensity: 40, trigger: 'Rainy weather', reasoning: 'Gloomy day affected mood' },
+    { date: 'Jun 26', intensity: 35, trigger: 'Missed call', reasoning: 'Felt disconnected' },
+    { date: 'Jun 28', intensity: 50, trigger: 'Work stress', reasoning: 'Overwhelmed by tasks' },
+    { date: 'Jul 1', intensity: 30, trigger: 'Job offer', reasoning: 'Hopeful for change' },
+    { date: 'Jul 3', intensity: 20, trigger: 'Family call', reasoning: 'Reassurance from loved ones' },
+    { date: 'Jul 5', intensity: 25, trigger: 'Gym session', reasoning: 'Endorphins helped' },
+    { date: 'Jul 7', intensity: 15, trigger: 'Weekend trip', reasoning: 'Distraction from worries' }
   ],
   Anger: [
-    { date: 'Jun 24', value: 30 }, { date: 'Jun 26', value: 45 }, { date: 'Jun 28', value: 20 }, { date: 'Jul 1', value: 25 }, { date: 'Jul 3', value: 35 }, { date: 'Jul 5', value: 30 }, { date: 'Jul 7', value: 40 }
+    { date: 'Jun 24', intensity: 30, trigger: 'Traffic jam', reasoning: 'Frustration with commute' },
+    { date: 'Jun 26', intensity: 45, trigger: 'Work conflict', reasoning: 'Disagreement with colleague' },
+    { date: 'Jun 28', intensity: 20, trigger: 'Missed appointment', reasoning: 'Disappointment in self' },
+    { date: 'Jul 1', intensity: 25, trigger: 'Job offer', reasoning: 'Hopeful for change' },
+    { date: 'Jul 3', intensity: 35, trigger: 'Family call', reasoning: 'Supportive conversation' },
+    { date: 'Jul 5', intensity: 30, trigger: 'Gym session', reasoning: 'Physical activity uplifted mood' },
+    { date: 'Jul 7', intensity: 40, trigger: 'Weekend trip', reasoning: 'Relaxation and fun' }
   ],
   Fear: [
-    { date: 'Jun 24', value: 50 }, { date: 'Jun 26', value: 40 }, { date: 'Jun 28', value: 30 }, { date: 'Jul 1', value: 20 }, { date: 'Jul 3', value: 25 }, { date: 'Jul 5', value: 15 }, { date: 'Jul 7', value: 20 }
+    { date: 'Jun 24', intensity: 50, trigger: 'Dark room', reasoning: 'Fear of the unknown' },
+    { date: 'Jun 26', intensity: 40, trigger: 'Missed call', reasoning: 'Felt disconnected' },
+    { date: 'Jun 28', intensity: 30, trigger: 'Work deadline', reasoning: 'Mild stress reduced joy' },
+    { date: 'Jul 1', intensity: 20, trigger: 'Job offer', reasoning: 'Hopeful for change' },
+    { date: 'Jul 3', intensity: 25, trigger: 'Family call', reasoning: 'Reassurance from loved ones' },
+    { date: 'Jul 5', intensity: 15, trigger: 'Gym session', reasoning: 'Endorphins helped' },
+    { date: 'Jul 7', intensity: 20, trigger: 'Weekend trip', reasoning: 'Distraction from worries' }
   ],
   Surprise: [
-    { date: 'Jun 24', value: 20 }, { date: 'Jun 26', value: 30 }, { date: 'Jun 28', value: 40 }, { date: 'Jul 1', value: 60 }, { date: 'Jul 3', value: 55 }, { date: 'Jul 5', value: 65 }, { date: 'Jul 7', value: 70 }
+    { date: 'Jun 24', intensity: 20, trigger: 'Morning surprise', reasoning: 'Unexpected pleasant interaction' },
+    { date: 'Jun 26', intensity: 30, trigger: 'Team lunch', reasoning: 'Positive social interaction' },
+    { date: 'Jun 28', intensity: 40, trigger: 'Work deadline', reasoning: 'Mild stress reduced joy' },
+    { date: 'Jul 1', intensity: 60, trigger: 'Job offer', reasoning: 'Excitement about new opportunity' },
+    { date: 'Jul 3', intensity: 55, trigger: 'Family call', reasoning: 'Supportive conversation' },
+    { date: 'Jul 5', intensity: 65, trigger: 'Gym session', reasoning: 'Physical activity uplifted mood' },
+    { date: 'Jul 7', intensity: 70, trigger: 'Weekend trip', reasoning: 'Relaxation and fun' }
   ],
   Disgust: [
-    { date: 'Jun 24', value: 35 }, { date: 'Jun 26', value: 25 }, { date: 'Jun 28', value: 30 }, { date: 'Jul 1', value: 40 }, { date: 'Jul 3', value: 45 }, { date: 'Jul 5', value: 50 }, { date: 'Jul 7', value: 30 }
+    { date: 'Jun 24', intensity: 35, trigger: 'Food taste', reasoning: 'Dislike of meal' },
+    { date: 'Jun 26', intensity: 25, trigger: 'Work conflict', reasoning: 'Disagreement with colleague' },
+    { date: 'Jun 28', intensity: 30, trigger: 'Work deadline', reasoning: 'Mild stress reduced joy' },
+    { date: 'Jul 1', intensity: 40, trigger: 'Job offer', reasoning: 'Hopeful for change' },
+    { date: 'Jul 3', intensity: 45, trigger: 'Family call', reasoning: 'Reassurance from loved ones' },
+    { date: 'Jul 5', intensity: 50, trigger: 'Gym session', reasoning: 'Endorphins helped' },
+    { date: 'Jul 7', intensity: 30, trigger: 'Weekend trip', reasoning: 'Distraction from worries' }
   ]
 };
 
@@ -112,8 +151,154 @@ const HolographicHuman = () => (
   </svg>
 );
 
+// Custom Tooltip for emotion analytics
+interface EmolyticsTooltipProps {
+  active?: boolean;
+  payload?: any[];
+  label?: string | number;
+}
+const EmolyticsTooltip: React.FC<EmolyticsTooltipProps> = ({ active, payload, label }) => {
+  if (active && payload && payload.length) {
+    const d = payload[0].payload;
+    return (
+      <div className="relative min-w-[240px] max-w-xs px-0 py-0">
+        {/* Chat bubble */}
+        <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 text-white rounded-2xl px-6 py-5 shadow-xl font-medium relative animate-fade-in-up">
+          {/* ev avatar icon */}
+          <div className="absolute -top-6 left-4 flex items-center">
+            <EvIcon size={36} />
+          </div>
+          {/* Chat bubble tail */}
+          <span className="absolute left-8 -bottom-4 w-6 h-6 bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 rotate-45 rounded-sm" style={{clipPath:'polygon(0 0, 100% 0, 100% 100%)'}}></span>
+          <div className="mb-2 mt-2 text-base font-semibold">Here's what I see in your Emolytics for <span className="text-purple-200 font-bold">{label?.toString()}</span>:</div>
+          <div className="mb-1"><span className="font-semibold text-purple-100">Trigger:</span> {d.trigger || '—'}</div>
+          <div className="mb-1"><span className="font-semibold text-purple-100">Reasoning:</span> {d.reasoning || '—'}</div>
+          <div><span className="font-semibold text-purple-100">Intensity:</span> {d.intensity}</div>
+        </div>
+      </div>
+    );
+  }
+  return null;
+};
+
+// Scroll reveal hook
+function useScrollReveal(threshold = 0.2) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [threshold]);
+  return [ref, visible] as const;
+}
+
 const Emolytics: React.FC = () => {
   const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null);
+  const insightSegments = [
+    'hey! i noticed your ',
+    <span key="joy" style={{color: emotionColors.Joy}}>joy</span>,
+    ' has been rising lately, especially after your job offer. if you keep this up, your ',
+    <span key="anger" style={{color: emotionColors.Anger}}>anger</span>,
+    ' might drop even more, and your ',
+    <span key="sadness" style={{color: emotionColors.Sadness}}>sadness</span>,
+    ' could stay low. keep it up!'
+  ];
+  const feelingText = 'feeling productive!';
+
+  function useTypingAnimation(fullText: string, speed: number = 18, onDone?: () => void) {
+    const [displayed, setDisplayed] = useState('');
+    useEffect(() => {
+      let i = 0;
+      let timeout: ReturnType<typeof setTimeout>;
+      function type() {
+        setDisplayed(fullText.slice(0, i));
+        if (i < fullText.length) {
+          timeout = setTimeout(() => {
+            i++;
+            type();
+          }, speed);
+        } else if (onDone) {
+          onDone();
+        }
+      }
+      type();
+      return () => clearTimeout(timeout);
+    }, [fullText, speed, onDone]);
+    return displayed;
+  }
+
+  const [insightDone, setInsightDone] = useState(false);
+  // Custom node-based typing animation for insight (glitch-free)
+  const [insightTypedNodes, setInsightTypedNodes] = useState<React.ReactNode[]>([]);
+  useEffect(() => {
+    let i = 0;
+    let j = 0;
+    let current: React.ReactNode[] = [];
+    let timeout: ReturnType<typeof setTimeout>;
+    function type() {
+      if (i >= insightSegments.length) {
+        setInsightTypedNodes(current);
+        setInsightDone(true);
+        return;
+      }
+      const seg = insightSegments[i];
+      if (typeof seg === 'string') {
+        if (j < seg.length) {
+          setInsightTypedNodes([...current, seg.slice(0, j + 1)]);
+          j++;
+          timeout = setTimeout(type, 18);
+          return;
+        } else {
+          current = [...current, seg];
+          i++;
+          j = 0;
+          timeout = setTimeout(type, 18);
+          return;
+        }
+      } else {
+        current = [...current, seg];
+        setInsightTypedNodes(current);
+        i++;
+        j = 0;
+        timeout = setTimeout(type, 18);
+        return;
+      }
+    }
+    type();
+    return () => clearTimeout(timeout);
+    // eslint-disable-next-line
+  }, []);
+  const feelingTyped = useTypingAnimation(feelingText, 22, undefined);
+
+  // Chat companion typing animation: strict sequence
+  const evBubble1 = 'How are you feeling today?';
+  const userBubble = 'I feel a bit anxious about my new job.';
+  const evBubble2 = `I totally get that! New jobs can be really overwhelming. What's making you feel most anxious about it?`;
+
+  // No typing animation: just show full text
+  const ev1Typed = evBubble1;
+  const userTyped = userBubble;
+  const ev2Typed = evBubble2;
+
+  const [showAvatar, setShowAvatar] = useState(false);
+  useEffect(() => {
+    if (insightDone) {
+      setTimeout(() => setShowAvatar(true), 100);
+    }
+  }, [insightDone]);
+
+  // Scroll reveal for each section
+  const [companionRef, companionVisible] = useScrollReveal(0.2);
+  const [chartsRef, chartsVisible] = useScrollReveal(0.2);
+  const [insightRef, insightVisible] = useScrollReveal(0.2);
 
   return (
     <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
@@ -125,8 +310,53 @@ const Emolytics: React.FC = () => {
           </p>
         </div>
 
+        {/* AI Chat Companion Full-Width Section */}
+        <div ref={companionRef} className={`w-full flex flex-col items-center mb-24 mt-24 transition-all duration-700 ease-out ${companionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h3 className="text-2xl md:text-3xl font-bold mb-10 text-center bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 text-transparent bg-clip-text animate-fade-in-up drop-shadow-glow">meet ev - your ai chat companion</h3>
+          {/* Blurred gradient background behind chat */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[32vw] max-w-4xl max-h-96 bg-gradient-to-br from-purple-500/30 via-pink-400/20 to-blue-400/10 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none'}}></div>
+          <div className="w-full flex justify-center relative z-10">
+            <div className="w-full max-w-4xl flex flex-col gap-16 items-center">
+              <div className="flex w-full fade-in-bubble-1">
+                <div className="flex-shrink-0 mr-5"><EvIcon size={48} /></div>
+                <div className="px-10 py-5 rounded-3xl bg-gradient-to-r from-purple-500/80 to-pink-500/80 text-white/80 text-lg text-center max-w-2xl font-light shadow-xl animate-float-bubble-1 backdrop-blur-md bg-opacity-60 border border-white/20 fade-in-bubble-1">
+                  {ev1Typed}
+                </div>
+              </div>
+              <div className="flex w-full justify-end fade-in-bubble-2">
+                <div className="px-10 py-5 rounded-3xl bg-white/20 text-white/80 text-lg text-center max-w-2xl font-light border border-white/20 shadow-xl animate-float-bubble-2 backdrop-blur-md bg-opacity-60 fade-in-bubble-2">
+                  {userTyped}
+                </div>
+                <img src={avatar} alt="User avatar" className="flex-shrink-0 w-12 h-12 rounded-2xl object-cover ml-5 shadow-lg border-2 border-white/20" />
+              </div>
+              <div className="flex w-full fade-in-bubble-3">
+                <div className="flex-shrink-0 mr-5"><EvIcon size={48} /></div>
+                <div className="px-10 py-5 rounded-3xl bg-gradient-to-r from-purple-500/80 to-pink-500/80 text-white/80 text-lg text-center max-w-2xl font-light shadow-xl animate-float-bubble-3 backdrop-blur-md bg-opacity-60 border border-white/20 fade-in-bubble-3">
+                  {ev2Typed}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Creative transition: Ev generates your Emolytics */}
+        <div className="flex flex-col items-center mb-12">
+          <div className="flex items-center gap-3">
+            <span className="inline-block w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+              <svg width="20" height="20" fill="none" viewBox="0 0 20 20"><path d="M10 2v2M10 16v2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M2 10h2m12 0h2M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/></svg>
+            </span>
+            <span className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 text-transparent bg-clip-text drop-shadow-glow font-display">ev then generates your emolytics</span>
+          </div>
+          <div className="mt-2 text-white/80 text-lg text-center max-w-2xl font-light">Watch as your emotional data transforms into beautiful, interactive analytics—personalized just for you.</div>
+        </div>
+
+        {/* Ev illustration and speech bubble before Emolytics charts */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-10">
+          {/* Remove the avatar and speech bubble before the Emolytics charts (delete the flex div with img and message) */}
+        </div>
+
         {/* Charts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div ref={chartsRef} className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 transition-all duration-700 ease-out ${chartsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {Object.keys(emotionData).map((emotion) => (
             <div key={emotion} className="bg-white/5 rounded-2xl p-4 flex flex-col items-center shadow border border-white/10">
               <h3 className="text-lg font-bold mb-2 text-white">{emotion}</h3>
@@ -135,8 +365,13 @@ const Emolytics: React.FC = () => {
                   <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
                   <XAxis dataKey="date" tick={{ fill: '#cbd5e1', fontSize: 12 }} axisLine={false} tickLine={false} />
                   <YAxis domain={[0, 100]} hide />
-                  <Tooltip contentStyle={{ background: '#1e293b', border: 'none', color: '#fff' }} />
-                  <Line type="monotone" dataKey="value" stroke={emotionColors[emotion as keyof typeof emotionColors]} strokeWidth={3} dot={false} />
+                  <Tooltip 
+                    content={(props) => <EmolyticsTooltip {...props} />} 
+                    allowEscapeViewBox={{ x: true, y: true }}
+                    wrapperStyle={{ pointerEvents: 'none', background: 'rgba(30,41,59,0.92)', boxShadow: '0 8px 32px 0 rgba(56,189,248,0.18)', borderRadius: '1rem', border: '1px solid #60a5fa', zIndex: 50 }}
+                    offset={30}
+                  />
+                  <Line type="monotone" dataKey="intensity" stroke={emotionColors[emotion as keyof typeof emotionColors]} strokeWidth={3} dot={false} />
                   <Brush dataKey="date" height={30} stroke={emotionColors[emotion as keyof typeof emotionColors]} />
                 </LineChart>
               </ResponsiveContainer>
@@ -144,29 +379,31 @@ const Emolytics: React.FC = () => {
           ))}
         </div>
 
-        {/* Insights and 3D Visualization */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Insights Card */}
-          <div className="bg-white/10 rounded-2xl p-8 shadow-xl border border-blue-400/30">
-            <h3 className="text-2xl font-bold text-white mb-4">AI-Powered Insights</h3>
-            <ul className="text-white/90 text-base space-y-3">
-              <li><span className="font-semibold text-blue-300">Past:</span> Before July 1, Joy and Fear were dominant emotions.</li>
-              <li><span className="font-semibold text-blue-300">Present:</span> Joy is rising, Sadness is falling, and Anger is stable.</li>
-              <li><span className="font-semibold text-blue-300">Decision Impact:</span> After your job change on July 1, Joy increased, Fear decreased, and Sadness dropped sharply.</li>
-              <li><span className="font-semibold text-blue-300">Emotional Forecasting:</span> Based on your current emotional state, if you decide to move cities, we predict your Joy will increase by 15% and Fear will decrease by 20%.</li>
-            </ul>
-          </div>
-
-          {/* Modern Human Silhouette Visualization */}
-          <div className="flex flex-col items-center">
-            <h4 className="text-lg font-semibold text-white mb-2">3D Emotional Body Map</h4>
-            <div className="bg-blue-900/30 rounded-xl px-6 py-8 text-center text-blue-200 text-base font-medium shadow border border-blue-400/20">
-              3D Emotional Body Map coming soon.<br />We are actively working on this feature.
+        {/* Insights and Emotional Body Map Side-by-Side */}
+        <div ref={insightRef} className={`w-full my-16 flex flex-col md:flex-row justify-center items-center gap-10 relative transition-all duration-700 ease-out ${insightVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          {/* Blurred gradient background like AI Chat Companion */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[18vw] max-w-3xl max-h-60 bg-gradient-to-br from-purple-500/30 via-pink-400/20 to-blue-400/10 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none'}}></div>
+          <div className="flex items-center gap-5 max-w-xl w-full z-10 px-6 md:px-10">
+            <div className="flex-shrink-0 flex items-center justify-center"><EvIcon size={44} /></div>
+            <div className="text-white/80 text-lg text-center max-w-xl font-light">
+              {insightTypedNodes}
             </div>
-            <div className="flex flex-wrap gap-2 justify-center mt-2 text-xs text-white/80">
-              {Object.entries(emotionColors).map(([emotion, color]) => (
-                <span key={emotion} className="inline-flex items-center"><span className="w-3 h-3 rounded-full mr-1" style={{background:color}}></span>{emotion}</span>
-              ))}
+          </div>
+          <div className="flex flex-col items-center z-10 px-6 md:px-10">
+            <img 
+              src={avatar} 
+              alt="Your current feel-moji" 
+              className={`w-40 h-40 rounded-3xl object-cover mb-6 transition-all duration-700 ease-out ${showAvatar ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} 
+            />
+            <div className="text-white/80 text-lg text-center max-w-xl font-light">
+              {insightDone ? (
+                <span>
+                  {feelingTyped}
+                  {feelingTyped.length < feelingText.length && <span className="typing-cursor">|</span>}
+                </span>
+              ) : (
+                <span>&nbsp;</span>
+              )}
             </div>
           </div>
         </div>

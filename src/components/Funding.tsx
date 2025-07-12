@@ -19,6 +19,12 @@ const Funding: React.FC = () => {
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
             Be part of the next wave in emotionally intelligent technology. Evolance is building the world’s first platform that combines emotional analytics, decision forecasting, and adaptive AI support—empowering people to truly understand and grow their emotional lives.
           </p>
+          <div className="mt-8 mb-2 text-2xl text-green-200 font-semibold">
+            We are seeking <span className="text-green-300">$1M</span> on a SAFE with a <span className="text-green-300">$7.5M valuation cap</span> and <span className="text-green-300">20% discount</span>.
+          </div>
+          <div className="mt-4 text-lg text-white/80 font-medium">
+            At $179/year, we need just 5,600 subscribers to hit $1M in ARR.
+          </div>
         </div>
 
         {/* Market & Traction */}
