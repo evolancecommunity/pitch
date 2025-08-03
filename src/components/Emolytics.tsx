@@ -279,6 +279,79 @@ const Emolytics: React.FC = () => {
   }, []);
   const feelingTyped = useTypingAnimation(feelingText, 22, undefined);
 
+  // Journal typing animation with typo
+  function useJournalTypingAnimation() {
+    const [journalText, setJournalText] = useState('');
+    const [isTyping, setIsTyping] = useState(false);
+    
+    useEffect(() => {
+      const fullText = "Feeling grateful today. The morning walk really helped clear my mind. I noticed I was more patient with my team during the meeting. Small wins, but they matter.";
+      
+      let currentIndex = 0;
+      let isBackspacing = false;
+      let backspaceIndex = 0;
+      let hasTypo = false;
+      let hasBackspaced = false;
+      
+      const typeSpeed = 50;
+      const backspaceSpeed = 30;
+      
+      const type = () => {
+        if (!isBackspacing) {
+          if (currentIndex < fullText.length) {
+            let currentText = fullText.slice(0, currentIndex + 1);
+            
+            // Introduce a typo at "patient" -> "patinet" around word 65-70
+            if (currentIndex >= 65 && currentIndex < 70 && !hasTypo) {
+              currentText = fullText.slice(0, 65) + "patinet" + fullText.slice(71);
+              hasTypo = true;
+            }
+            
+            setJournalText(currentText);
+            currentIndex++;
+            
+            // Start backspacing in the middle after typing "patinet"
+            if (currentIndex === 72 && hasTypo && !hasBackspaced) {
+              setTimeout(() => {
+                isBackspacing = true;
+                backspaceIndex = currentIndex;
+                backspace();
+              }, 800);
+            } else {
+              setTimeout(type, typeSpeed);
+            }
+          }
+        }
+      };
+      
+      const backspace = () => {
+        if (backspaceIndex > 65) {
+          let currentText = fullText.slice(0, backspaceIndex - 1);
+          setJournalText(currentText);
+          backspaceIndex--;
+          setTimeout(backspace, backspaceSpeed);
+        } else {
+          // Continue typing from where we backspaced
+          hasBackspaced = true;
+          isBackspacing = false;
+          currentIndex = backspaceIndex;
+          setTimeout(type, 300);
+        }
+      };
+      
+      setIsTyping(true);
+      type();
+      
+      return () => {
+        setIsTyping(false);
+      };
+    }, []);
+    
+    return { journalText, isTyping };
+  }
+
+  const { journalText, isTyping } = useJournalTypingAnimation();
+
   // Chat companion typing animation: strict sequence
   const evBubble1 = 'How are you feeling today?';
   const userBubble = 'I feel a bit anxious about my new job.';
@@ -372,9 +445,7 @@ const Emolytics: React.FC = () => {
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
                         <p className="text-white/80 text-sm leading-relaxed">
-                          "Feeling grateful today. The morning walk really helped clear my mind. 
-                          I noticed I was more patient with my team during the meeting. 
-                          Small wins, but they matter."
+                          "{journalText}{isTyping && <span className="animate-pulse">|</span>}"
                         </p>
                         <div className="flex items-center gap-2 mt-4">
                           <span className="px-2 py-1 rounded-full bg-green-500/20 text-green-300 text-xs border border-green-500/30">Grateful</span>
