@@ -1,5 +1,6 @@
 import React from 'react';
 import { Globe } from 'lucide-react';
+import dpImage from '../assets/dp.png';
 
 type LinkedInIconProps = { className?: string };
 const LinkedInIcon: React.FC<LinkedInIconProps> = ({ className = "inline ml-2 mb-1" }) => (
@@ -29,7 +30,7 @@ const Team: React.FC = () => {
           <div className="flex-shrink-0 w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center relative">
             <div className="absolute inset-0 rounded-full animate-ethereal-rgb" style={{background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.3))'}}></div>
             <img 
-              src="/src/assets/dp.png" 
+              src={dpImage} 
               alt="Indraneel Bhattacharjee" 
               className="w-full h-full rounded-full object-cover border-2 border-white/20 relative z-10"
               style={{filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'}}
