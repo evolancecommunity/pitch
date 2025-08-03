@@ -3,7 +3,7 @@ import { DollarSign, TrendingUp, Users, Target, BarChart3, Brain } from 'lucide-
 
 const Funding: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-br from-slate-900 via-green-900 to-slate-800 relative overflow-hidden">
+    <section className="py-16 sm:py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-32 h-32 bg-green-500/5 rounded-full blur-3xl"></div>
@@ -17,10 +17,10 @@ const Funding: React.FC = () => {
             Invest in Evolance
           </h2>
           <p className="text-lg sm:text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light px-4">
-            Be part of the next wave in emotionally intelligent technology. Evolance is building the world's first platform that combines emotional analytics, decision forecasting, and adaptive AI support—empowering people to truly understand and grow their emotional lives.
+            Be part of the next wave in emotional growth technology. Evolance starts with Emolytics for emotional trends, then evolves into a comprehensive platform for all age groups - from kids to elderly - helping everyone grow emotionally through innovative, age-appropriate approaches.
           </p>
-          <div className="mt-6 sm:mt-8 mb-2 text-xl sm:text-2xl text-green-200 font-semibold px-4">
-            We are seeking <span className="text-green-300">$1M</span> on a SAFE with a <span className="text-green-300">$7.5M valuation cap</span> and <span className="text-green-300">20% discount</span>.
+          <div className="mt-6 sm:mt-8 mb-2 text-xl sm:text-2xl font-semibold px-4" style={{color: '#87CEEB'}}>
+            We are raising <span style={{color: '#2A7B9B'}}>$1M</span>
           </div>
           <div className="mt-3 sm:mt-4 text-base sm:text-lg text-white/80 font-medium px-4">
             At $179/year, we need just 5,600 subscribers to hit $1M in ARR.
@@ -50,16 +50,12 @@ const Funding: React.FC = () => {
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 text-center">Early Traction</h3>
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
               <div className="text-center">
-                <p className="text-xl sm:text-2xl font-bold text-emerald-300 mb-2">28</p>
+                <p className="text-xl sm:text-2xl font-bold text-emerald-300 mb-2">43</p>
                 <p className="text-white/90 text-sm">Waitlist Signups</p>
               </div>
               <div className="text-center">
                 <p className="text-xl sm:text-2xl font-bold text-teal-300 mb-2">40+</p>
                 <p className="text-white/90 text-sm">Discovery Interviews</p>
-              </div>
-              <div className="text-center">
-                <p className="text-xl sm:text-2xl font-bold text-blue-300 mb-2">2</p>
-                <p className="text-white/90 text-sm">Accelerators</p>
               </div>
               <div className="text-center">
                 <p className="text-xl sm:text-2xl font-bold text-purple-300 mb-2">Prototype</p>
@@ -87,7 +83,7 @@ const Funding: React.FC = () => {
                   <tbody>
                     <tr className="bg-slate-800/60">
                       <td className="py-3 px-2 sm:px-4 font-semibold text-sm sm:text-base">Free Trial</td>
-                      <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">$0 (1 month)</td>
+                      <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">$0 (21 days)</td>
                       <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">-</td>
                       <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">All features, cancel anytime</td>
                     </tr>
@@ -104,20 +100,20 @@ const Funding: React.FC = () => {
                       <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">Pro + advanced analytics, priority, export</td>
                     </tr>
                     <tr className="bg-slate-800/40">
-                      <td className="py-3 px-2 sm:px-4 font-semibold text-sm sm:text-base">B2B</td>
+                      <td className="py-3 px-2 sm:px-4 font-semibold text-sm sm:text-base">Enterprise</td>
                       <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">Custom</td>
                       <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">Custom</td>
-                      <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">Team dashboard, API, admin, onboarding</td>
+                      <td className="py-3 px-2 sm:px-4 text-sm sm:text-base">Team dashboard, admin, onboarding, custom integrations</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
             <div className="mt-6 sm:mt-8 text-white/90 text-sm sm:text-base space-y-2 text-center px-4">
-              <div><span className="font-bold">1 month free trial</span> for all users</div>
+              <div><span className="font-bold">21-day free trial</span> for all users</div>
               <div>No commitment, <span className="font-bold">cancel anytime</span></div>
               <div>Pro & Plus plans unlock advanced analytics and support</div>
-              <div>B2B SaaS: <span className="font-bold">Custom pricing</span> for organizations (future)</div>
+              <div>Enterprise: <span className="font-bold">Custom pricing</span> for organizations (future)</div>
               <div>Simple, transparent, scalable</div>
             </div>
           </div>
@@ -129,8 +125,8 @@ const Funding: React.FC = () => {
             Invest in Evolance
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-10 max-w-5xl mx-auto leading-relaxed font-light px-4">
-            Be part of the next wave in emotionally intelligent technology.<br className="hidden sm:block" />
-            Evolance is building the world's first platform that combines <span className="font-semibold text-green-300">emotional analytics</span>, <span className="font-semibold text-blue-300">decision forecasting</span>, and <span className="font-semibold text-purple-300">adaptive AI support</span>—empowering people to truly understand and grow their emotional lives.
+            Be part of the next wave in emotional growth technology.<br className="hidden sm:block" />
+            Evolance starts with <span className="font-semibold text-green-300">Emolytics</span> for emotional trends, then evolves into a comprehensive platform for <span className="font-semibold text-blue-300">all age groups</span> - from kids to elderly - helping everyone grow emotionally through <span className="font-semibold text-purple-300">innovative, age-appropriate approaches</span>.
           </p>
           <a href="mailto:founder@evolance.info" className="bg-white hover:bg-gray-50 active:bg-gray-100 text-slate-900 px-8 sm:px-10 py-4 sm:py-5 rounded-lg font-semibold text-lg sm:text-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl inline-flex items-center gap-3 min-h-[48px] touch-manipulation">
             Contact Us

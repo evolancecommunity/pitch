@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Brush
 } from 'recharts';
+import { BarChart3, Brain, MessageCircle } from 'lucide-react';
 import InteractiveAvatar, { EvIcon, EvBubble } from './InteractiveAvatar';
 import avatar from '../assets/avatar.png';
 import '../EmolyticsAnimations.css';
@@ -161,19 +162,19 @@ const EmolyticsTooltip: React.FC<EmolyticsTooltipProps> = ({ active, payload, la
   if (active && payload && payload.length) {
     const d = payload[0].payload;
     return (
-      <div className="relative min-w-[240px] max-w-xs px-0 py-0">
+              <div className="relative min-w-[240px] max-w-xs px-0 py-0">
         {/* Chat bubble */}
-        <div className="bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 text-white rounded-2xl px-6 py-5 shadow-xl font-medium relative animate-fade-in-up">
+        <div className="text-white rounded-2xl px-6 py-5 shadow-xl font-medium relative animate-fade-in-up" style={{backgroundColor: '#2A7B9B'}}>
           {/* ev avatar icon */}
           <div className="absolute -top-6 left-4 flex items-center">
             <EvIcon size={36} />
           </div>
           {/* Chat bubble tail */}
-          <span className="absolute left-8 -bottom-4 w-6 h-6 bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 rotate-45 rounded-sm" style={{clipPath:'polygon(0 0, 100% 0, 100% 100%)'}}></span>
-          <div className="mb-2 mt-2 text-base font-semibold">Here's what I see in your Emolytics for <span className="text-purple-200 font-bold">{label?.toString()}</span>:</div>
-          <div className="mb-1"><span className="font-semibold text-purple-100">Trigger:</span> {d.trigger || '—'}</div>
-          <div className="mb-1"><span className="font-semibold text-purple-100">Reasoning:</span> {d.reasoning || '—'}</div>
-          <div><span className="font-semibold text-purple-100">Intensity:</span> {d.intensity}</div>
+          <span className="absolute left-8 -bottom-4 w-6 h-6 rotate-45 rounded-sm" style={{clipPath:'polygon(0 0, 100% 0, 100% 100%)', backgroundColor: '#2A7B9B'}}></span>
+          <div className="mb-2 mt-2 text-base font-semibold">Here's what I see in your Emolytics for <span style={{color: '#B0E0E6', fontWeight: 'bold'}}>{label?.toString()}</span>:</div>
+          <div className="mb-1"><span style={{fontWeight: 'bold', color: '#B0E0E6'}}>Trigger:</span> {d.trigger || '—'}</div>
+          <div className="mb-1"><span style={{fontWeight: 'bold', color: '#B0E0E6'}}>Reasoning:</span> {d.reasoning || '—'}</div>
+          <div><span style={{fontWeight: 'bold', color: '#B0E0E6'}}>Intensity:</span> {d.intensity}</div>
         </div>
       </div>
     );
@@ -203,15 +204,15 @@ function useScrollReveal(threshold = 0.2) {
 const Emolytics: React.FC = () => {
   const [selectedEmotion, setSelectedEmotion] = useState<string | null>(null);
   const insightSegments = [
-    'hey! i noticed your ',
-    <span key="joy" style={{color: emotionColors.Joy}}>joy</span>,
-    ' has been rising lately, especially after your job offer. if you keep this up, your ',
-    <span key="anger" style={{color: emotionColors.Anger}}>anger</span>,
-    ' might drop even more, and your ',
-    <span key="sadness" style={{color: emotionColors.Sadness}}>sadness</span>,
-    ' could stay low. keep it up!'
+    'wow! you were really ',
+    <span key="joy" style={{color: emotionColors.Joy}}>joyful</span>,
+    ' about that job offer, weren\'t you? and i can see you\'ve been feeling more ',
+    <span key="joy" style={{color: emotionColors.Joy}}>happy</span>,
+    ' about your morning walks too. when you do things that make you ',
+    <span key="joy" style={{color: emotionColors.Joy}}>joyful</span>,
+    ', it really shows in your energy!'
   ];
-  const feelingText = 'feeling productive!';
+  const feelingText = 'feeling amazing!';
 
   function useTypingAnimation(fullText: string, speed: number = 18, onDone?: () => void) {
     const [displayed, setDisplayed] = useState('');
@@ -295,13 +296,13 @@ const Emolytics: React.FC = () => {
     }
   }, [insightDone]);
 
-  // Scroll reveal for each section
+  // Scroll reveal for each section - independent animations
   const [companionRef, companionVisible] = useScrollReveal(0.2);
-  const [chartsRef, chartsVisible] = useScrollReveal(0.2);
-  const [insightRef, insightVisible] = useScrollReveal(0.2);
+  const [chartsRef, chartsVisible] = useScrollReveal(0.1);
+  const [insightRef, insightVisible] = useScrollReveal(0.3);
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
+    <section id="emolytics-section" className="py-16 sm:py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight px-4">A Glimpse of Our Features</h2>
@@ -310,30 +311,142 @@ const Emolytics: React.FC = () => {
           </p>
         </div>
 
-        {/* AI Chat Companion Full-Width Section */}
+        {/* AI Chat Companion - Left/Right Layout */}
         <div ref={companionRef} className={`w-full flex flex-col items-center mb-16 sm:mb-24 mt-16 sm:mt-24 transition-all duration-700 ease-out ${companionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-8 sm:mb-10 text-center bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 text-transparent bg-clip-text animate-fade-in-up drop-shadow-glow px-4">meet ev - your ai chat companion</h3>
           {/* Blurred gradient background behind chat */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] sm:w-[60vw] h-[40vw] sm:h-[32vw] max-w-4xl max-h-96 bg-gradient-to-br from-purple-500/30 via-pink-400/20 to-blue-400/10 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none'}}></div>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] sm:w-[60vw] h-[40vw] sm:h-[32vw] max-w-4xl max-h-96 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none', background: 'linear-gradient(135deg, #2A7B9B20, #87CEEB15, #B0E0E610)'}}></div>
           <div className="w-full flex justify-center relative z-10">
-            <div className="w-full max-w-4xl flex flex-col gap-8 sm:gap-16 items-center px-4">
-              <div className="flex w-full fade-in-bubble-1">
-                <div className="flex-shrink-0 mr-3 sm:mr-5"><EvIcon size={36} /></div>
-                <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl bg-gradient-to-r from-purple-500/80 to-pink-500/80 text-white/80 text-base sm:text-lg text-center max-w-2xl font-light shadow-xl animate-float-bubble-1 backdrop-blur-md bg-opacity-60 border border-white/20 fade-in-bubble-1">
-                  {ev1Typed}
+            <div className="w-full max-w-6xl flex flex-col md:flex-row items-center gap-8 sm:gap-12 px-4">
+              {/* Left Side - Meet Ev */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>meet ev!</h3>
+                <p className="text-white/80 text-base sm:text-lg max-w-xs">Your AI companion for emotional growth</p>
+              </div>
+              
+              {/* Right Side - Chat Bubbles */}
+              <div className="flex-1 flex flex-col gap-6 sm:gap-8 items-center">
+                <div className="flex w-full fade-in-bubble-1">
+                  <div className="flex-shrink-0 mr-3 sm:mr-5"><EvIcon size={36} /></div>
+                  <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl text-white/80 text-base sm:text-lg text-center max-w-2xl font-light shadow-xl animate-float-bubble-1 backdrop-blur-md border border-white/20 fade-in-bubble-1" style={{backgroundColor: '#2A7B9B80'}}>
+                    {ev1Typed}
+                  </div>
+                </div>
+                <div className="flex w-full justify-end fade-in-bubble-2">
+                  <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl bg-white/20 text-white/80 text-base sm:text-lg text-center max-w-2xl font-light border border-white/20 shadow-xl animate-float-bubble-2 backdrop-blur-md bg-opacity-60 fade-in-bubble-2">
+                    {userTyped}
+                  </div>
+                  <img src={avatar} alt="User avatar" className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl object-cover ml-3 sm:ml-5 shadow-lg border-2 border-white/20" />
+                </div>
+                <div className="flex w-full fade-in-bubble-3">
+                  <div className="flex-shrink-0 mr-3 sm:mr-5"><EvIcon size={36} /></div>
+                  <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl text-white/80 text-base sm:text-lg text-center max-w-2xl font-light shadow-xl animate-float-bubble-3 backdrop-blur-md border border-white/20 fade-in-bubble-3" style={{backgroundColor: '#2A7B9B80'}}>
+                    {ev2Typed}
+                  </div>
                 </div>
               </div>
-              <div className="flex w-full justify-end fade-in-bubble-2">
-                <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl bg-white/20 text-white/80 text-base sm:text-lg text-center max-w-2xl font-light border border-white/20 shadow-xl animate-float-bubble-2 backdrop-blur-md bg-opacity-60 fade-in-bubble-2">
-                  {userTyped}
+            </div>
+          </div>
+        </div>
+
+        {/* Journal Space - Left/Right Layout */}
+        <div className="w-full flex flex-col items-center mb-16 sm:mb-24 mt-16 sm:mt-24">
+          {/* Blurred gradient background behind journal */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] sm:w-[60vw] h-[40vw] sm:h-[32vw] max-w-4xl max-h-96 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none', background: 'linear-gradient(135deg, #8B5CF620, #A78BFA15, #C084FC10)'}}></div>
+          <div className="w-full flex justify-center relative z-10">
+            <div className="w-full max-w-full flex flex-col md:flex-row items-center gap-8 sm:gap-12 px-4">
+              {/* Left Side - Journal Entry */}
+              <div className="flex-[4]">
+                <div className="w-full backdrop-blur-md rounded-2xl p-8 sm:p-10 border border-white/20 shadow-xl animate-ethereal-rgb">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+                        <svg className="w-4 h-4 text-purple-300" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                      </div>
+                      <span className="text-white/90 text-sm font-medium">Today's Reflection</span>
+                    </div>
+                    <span className="text-white/60 text-xs">2 hours ago</span>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <p className="text-white/80 text-sm leading-relaxed">
+                          "Feeling grateful today. The morning walk really helped clear my mind. 
+                          I noticed I was more patient with my team during the meeting. 
+                          Small wins, but they matter."
+                        </p>
+                        <div className="flex items-center gap-2 mt-4">
+                          <span className="px-2 py-1 rounded-full bg-green-500/20 text-green-300 text-xs border border-green-500/30">Grateful</span>
+                          <span className="px-2 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs border border-blue-500/30">Calm</span>
+                          <span className="px-2 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs border border-purple-500/30">Focused</span>
+                        </div>
+                      </div>
+                      {/* Music Player - Right Side */}
+                      <div className="flex flex-col items-center gap-2 ml-4">
+                        {/* Song Details */}
+                        <div className="text-center">
+                          <p className="text-xs font-medium text-purple-300">Weightless</p>
+                          <p className="text-xs text-purple-400/70">Marconi Union</p>
+                        </div>
+                        
+                        {/* Music Animation */}
+                        <div className="flex items-end gap-0.5 h-4">
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '6px', animationDelay: '0ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '9px', animationDelay: '150ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '12px', animationDelay: '300ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '8px', animationDelay: '450ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '10px', animationDelay: '600ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '7px', animationDelay: '750ms'}}></div>
+                        </div>
+                        
+                        {/* Control Buttons */}
+                        <div className="flex items-center gap-1">
+                          {/* Shuffle */}
+                          <button className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                            <svg className="w-3 h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M10.59 9.17L5.41 4L4 5.41l5.17 5.17L10.59 9.17zM14.5 4l2.04 2.04L4 18.59L5.41 20L17.96 7.46L20 9.5V4h-5.5zM14.83 13.41l-1.41 1.41l3.13 3.13L14.83 13.41z"/>
+                            </svg>
+                          </button>
+                          
+                          {/* Previous */}
+                          <button className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                            <svg className="w-3 h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                            </svg>
+                          </button>
+                          
+                          {/* Play/Pause */}
+                          <button className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M8 5v14l11-7z"/>
+                            </svg>
+                          </button>
+                          
+                          {/* Next */}
+                          <button className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                            <svg className="w-3 h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                            </svg>
+                          </button>
+                          
+                          {/* Repeat */}
+                          <button className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                            <svg className="w-3 h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <img src={avatar} alt="User avatar" className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl object-cover ml-3 sm:ml-5 shadow-lg border-2 border-white/20" />
               </div>
-              <div className="flex w-full fade-in-bubble-3">
-                <div className="flex-shrink-0 mr-3 sm:mr-5"><EvIcon size={36} /></div>
-                <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl bg-gradient-to-r from-purple-500/80 to-pink-500/80 text-white/80 text-base sm:text-lg text-center max-w-2xl font-light shadow-xl animate-float-bubble-3 backdrop-blur-md bg-opacity-60 border border-white/20 fade-in-bubble-3">
-                  {ev2Typed}
-                </div>
+              
+              {/* Right Side - How was your day? */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>how was your day?</h3>
+                <p className="text-white/80 text-base sm:text-lg max-w-xs">Reflect and grow with ambient mood settings</p>
               </div>
             </div>
           </div>
@@ -342,10 +455,10 @@ const Emolytics: React.FC = () => {
         {/* Creative transition: Ev generates your Emolytics */}
         <div className="flex flex-col items-center mb-8 sm:mb-12 px-4">
           <div className="flex items-center gap-2 sm:gap-3">
-            <span className="inline-block w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-lg">
+            <span className="inline-block w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shadow-lg" style={{backgroundColor: '#2A7B9B'}}>
               <svg width="16" height="16" fill="none" viewBox="0 0 20 20" className="sm:w-5 sm:h-5"><path d="M10 2v2M10 16v2M4.22 4.22l1.42 1.42M14.36 14.36l1.42 1.42M2 10h2m12 0h2M4.22 15.78l1.42-1.42M14.36 5.64l1.42-1.42" stroke="#fff" strokeWidth="1.5" strokeLinecap="round"/></svg>
             </span>
-            <span className="text-xl sm:text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-purple-500 via-pink-500 to-fuchsia-500 text-transparent bg-clip-text drop-shadow-glow font-display">ev then generates your emolytics</span>
+            <span className="text-xl sm:text-2xl md:text-3xl font-extrabold drop-shadow-glow font-display" style={{color: '#87CEEB'}}>ev then generates your emolytics</span>
           </div>
           <div className="mt-2 text-white/80 text-base sm:text-lg text-center max-w-2xl font-light">Watch as your emotional data transforms into beautiful, interactive analytics—personalized just for you.</div>
         </div>
@@ -355,56 +468,101 @@ const Emolytics: React.FC = () => {
           {/* Remove the avatar and speech bubble before the Emolytics charts (delete the flex div with img and message) */}
         </div>
 
-        {/* Charts Grid */}
-        <div ref={chartsRef} className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 transition-all duration-700 ease-out ${chartsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {Object.keys(emotionData).map((emotion) => (
-            <div key={emotion} className="bg-white/5 rounded-2xl p-3 sm:p-4 flex flex-col items-center shadow border border-white/10 touch-manipulation">
-              <h3 className="text-base sm:text-lg font-bold mb-2 text-white">{emotion}</h3>
-              <ResponsiveContainer width="100%" height={100} className="sm:h-[120px]">
-                <LineChart data={emotionData[emotion as keyof typeof emotionData]} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-                  <XAxis dataKey="date" tick={{ fill: '#cbd5e1', fontSize: 10 }} axisLine={false} tickLine={false} />
-                  <YAxis domain={[0, 100]} hide />
-                  <Tooltip 
-                    content={(props) => <EmolyticsTooltip {...props} />} 
-                    allowEscapeViewBox={{ x: true, y: true }}
-                    wrapperStyle={{ pointerEvents: 'none', background: 'rgba(30,41,59,0.92)', boxShadow: '0 8px 32px 0 rgba(56,189,248,0.18)', borderRadius: '1rem', border: '1px solid #60a5fa', zIndex: 50 }}
-                    offset={30}
-                  />
-                  <Line type="monotone" dataKey="intensity" stroke={emotionColors[emotion as keyof typeof emotionColors]} strokeWidth={3} dot={false} />
-                  <Brush dataKey="date" height={30} stroke={emotionColors[emotion as keyof typeof emotionColors]} />
-                </LineChart>
-              </ResponsiveContainer>
-            </div>
-          ))}
-        </div>
-
-        {/* Insights and Emotional Body Map Side-by-Side */}
-        <div ref={insightRef} className={`w-full my-12 sm:my-16 flex flex-col md:flex-row justify-center items-center gap-6 sm:gap-10 relative transition-all duration-700 ease-out ${insightVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          {/* Blurred gradient background like AI Chat Companion */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] sm:w-[60vw] h-[20vw] sm:h-[18vw] max-w-3xl max-h-60 bg-gradient-to-br from-purple-500/30 via-pink-400/20 to-blue-400/10 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none'}}></div>
-                      <div className="flex items-center gap-3 sm:gap-5 max-w-xl w-full z-10 px-4 sm:px-6 md:px-10">
-            <div className="flex-shrink-0 flex items-center justify-center"><EvIcon size={36} /></div>
-            <div className="text-white/80 text-base sm:text-lg text-center max-w-xl font-light">
-              {insightTypedNodes}
+        {/* Unified Trend Graphs & Emotional Avatar */}
+        <div className="w-full flex flex-col items-center mb-16 sm:mb-24 mt-16 sm:mt-24">
+          {/* Blurred gradient background */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] sm:w-[60vw] h-[40vw] sm:h-[32vw] max-w-4xl max-h-96 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none', background: 'linear-gradient(135deg, #2A7B9B20, #87CEEB15, #B0E0E610)'}}></div>
+          <div className="w-full flex justify-center relative z-10">
+            <div className="w-full max-w-7xl flex flex-col lg:flex-row items-start gap-8 sm:gap-12 px-4">
+              
+              {/* Left Side - Trend Graphs (Larger) */}
+              <div className="flex-1 lg:flex-[2]">
+                <div className="mb-6 text-center lg:text-left">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>your emotional trends</h3>
+                  <p className="text-white/80 text-base sm:text-lg">Real-time analytics & patterns</p>
+                </div>
+                
+                <div ref={chartsRef} className={`grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 transition-all duration-700 ease-out ${chartsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                  {Object.keys(emotionData).slice(0, 4).map((emotion) => (
+                    <div key={emotion} className="bg-white/5 rounded-2xl p-4 sm:p-6 flex flex-col items-center shadow border border-white/10 touch-manipulation">
+                      <h3 className="text-base sm:text-lg font-bold mb-3 text-white">{emotion}</h3>
+                      <ResponsiveContainer width="100%" height={120} className="sm:h-[140px]">
+                        <LineChart data={emotionData[emotion as keyof typeof emotionData]} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+                          <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
+                          <XAxis dataKey="date" tick={{ fill: '#cbd5e1', fontSize: 10 }} axisLine={false} tickLine={false} />
+                          <YAxis domain={[0, 100]} hide />
+                          <Tooltip 
+                            content={(props) => <EmolyticsTooltip {...props} />} 
+                            allowEscapeViewBox={{ x: true, y: true }}
+                            wrapperStyle={{ pointerEvents: 'none', background: 'rgba(30,41,59,0.92)', boxShadow: '0 8px 32px 0 rgba(56,189,248,0.18)', borderRadius: '1rem', border: '1px solid #60a5fa', zIndex: 50 }}
+                            offset={30}
+                          />
+                          <Line type="monotone" dataKey="intensity" stroke={emotionColors[emotion as keyof typeof emotionColors]} strokeWidth={3} dot={false} />
+                          <Brush 
+                            dataKey="date" 
+                            height={25} 
+                            stroke={emotionColors[emotion as keyof typeof emotionColors]}
+                            fill={emotionColors[emotion as keyof typeof emotionColors] + '20'}
+                            strokeWidth={2}
+                            gap={10}
+                          />
+                        </LineChart>
+                      </ResponsiveContainer>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Right Side - Reflective Insights (Compact) */}
+              <div className="flex flex-col items-center lg:items-start text-center lg:text-left lg:flex-1 lg:max-w-sm">
+                <div className="mb-6">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>Your Reflective Insights!</h3>
+                  <p className="text-white/80 text-base sm:text-lg">AI-powered emotional insights</p>
+                </div>
+                
+                <div ref={insightRef} className={`transition-all duration-700 ease-out ${insightVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                  <div className="flex items-center gap-3 sm:gap-5 mb-6">
+                    <div className="flex-shrink-0 flex items-center justify-center"><EvIcon size={36} /></div>
+                    <div className="text-white/80 text-base sm:text-lg text-center lg:text-left max-w-xl font-light">
+                      {insightTypedNodes}
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center lg:items-start">
+                    <img 
+                      src={avatar} 
+                      alt="Your current feel-moji" 
+                      className={`w-28 h-28 sm:w-36 sm:h-36 rounded-3xl object-cover mb-4 transition-all duration-700 ease-out ${showAvatar ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} 
+                    />
+                    <div className="text-white/80 text-base sm:text-lg text-center lg:text-left">
+                      {insightDone ? (
+                        <span>
+                          {feelingTyped}
+                          {feelingTyped.length < feelingText.length && <span className="typing-cursor">|</span>}
+                        </span>
+                      ) : (
+                        <span>&nbsp;</span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="flex flex-col items-center z-10 px-4 sm:px-6 md:px-10">
-            <img 
-              src={avatar} 
-              alt="Your current feel-moji" 
-              className={`w-32 h-32 sm:w-40 sm:h-40 rounded-3xl object-cover mb-4 sm:mb-6 transition-all duration-700 ease-out ${showAvatar ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`} 
-            />
-            <div className="text-white/80 text-base sm:text-lg text-center max-w-xl font-light">
-              {insightDone ? (
-                <span>
-                  {feelingTyped}
-                  {feelingTyped.length < feelingText.length && <span className="typing-cursor">|</span>}
-                </span>
-              ) : (
-                <span>&nbsp;</span>
-              )}
-            </div>
+        </div>
+
+        {/* Vision Statement */}
+        <div className="text-center mb-8 sm:mb-12 px-4">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
+            Starting with <span style={{color: '#87CEEB'}}>Emolytics</span> for emotional trends
+          </h3>
+          <p className="text-base sm:text-lg text-white/90 mb-4 leading-relaxed max-w-4xl mx-auto">
+            We're building a comprehensive platform for <span style={{fontWeight: 'bold', color: '#87CEEB'}}>all age groups</span> - from kids to elderly - helping everyone grow emotionally through innovative, age-appropriate approaches.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base">
+            <span className="px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">Kids</span>
+            <span className="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">Teens</span>
+            <span className="px-3 py-1 rounded-full bg-green-500/20 text-green-300 border border-green-500/30">Adults</span>
+            <span className="px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/30">Elderly</span>
           </div>
         </div>
       </div>

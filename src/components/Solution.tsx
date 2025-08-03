@@ -3,82 +3,115 @@ import { BarChart3, Brain, MessageCircle, Check, X } from 'lucide-react';
 
 const Solution: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-32 h-32 bg-green-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-20 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-20 h-20 bg-purple-500/5 rounded-full blur-2xl"></div>
+        <div className="absolute top-20 right-20 w-32 h-32 rounded-full blur-3xl" style={{background: '#2A7B9B15'}}></div>
+        <div className="absolute bottom-10 left-20 w-24 h-24 rounded-full blur-2xl" style={{background: '#87CEEB10'}}></div>
+        <div className="absolute top-1/2 left-1/3 w-20 h-20 rounded-full blur-2xl" style={{background: '#B0E0E610'}}></div>
       </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Our Solution
+            The Solution: Evolance
           </h2>
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
-            Three integrated components that create the world's first emotionally intelligent AI companion.
+            Starting with Emolytics for emotional trends, evolving into a comprehensive platform for all age groups - helping everyone grow emotionally through innovative, age-appropriate approaches.
           </p>
         </div>
 
         {/* Three Core Solutions */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          {/* Solution 1: Emolytics */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-green-400/30 hover:border-green-500 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-green-500/20 rounded-xl flex items-center justify-center mr-4">
-                <BarChart3 className="w-8 h-8 text-green-300" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+          {/* Solution 1: Emolytics + AI Insights - Blue-Purple Gradient Theme */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border transition-all duration-300" style={{borderColor: '#3B82F640', background: 'linear-gradient(135deg, rgba(255,255,255,0.1), #3B82F610, #8B5CF610)'}}>
+            <div className="flex items-center mb-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-3" style={{background: 'linear-gradient(135deg, #3B82F620, #8B5CF620)'}}>
+                <BarChart3 className="w-6 h-6" style={{color: '#3B82F6'}} />
               </div>
-              <h3 className="text-2xl font-bold text-white">Emolytics Dashboard</h3>
+              <h3 className="text-lg font-bold text-white">Emolytics & Reflective Insights</h3>
             </div>
-            <div className="space-y-4">
-              <div className="bg-green-500/10 rounded-lg p-4 border border-green-400/20">
-                <p className="text-white/90 text-sm font-semibold mb-2">Live Emotional Analytics</p>
-                <p className="text-white/80 text-sm">Real-time dashboard showing emotional trends, triggers, and patterns</p>
+            <div className="space-y-3">
+              <div className="rounded-lg p-3 border" style={{background: '#3B82F610', borderColor: '#3B82F620'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Live Emotional Analytics</p>
+                <p className="text-xs" style={{color: '#60A5FA'}}>Real-time trends, triggers, and patterns</p>
               </div>
-              <div className="bg-green-500/5 rounded-lg p-4 border border-green-400/10">
-                <p className="text-white/90 text-sm font-semibold mb-2">Personal Fingerprint</p>
-                <p className="text-white/80 text-sm">Unique emotional identity that evolves with your growth</p>
+              <div className="rounded-lg p-3 border" style={{background: '#3B82F605', borderColor: '#3B82F610'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Personal Fingerprint</p>
+                <p className="text-xs" style={{color: '#60A5FA'}}>Unique emotional identity</p>
               </div>
-            </div>
-          </div>
-
-          {/* Solution 2: AI Avatar + Decision Forecasting */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-blue-400/30 hover:border-blue-500 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mr-4">
-                <Brain className="w-8 h-8 text-blue-300" />
-              </div>
-              <h3 className="text-2xl font-bold text-white">AI Decision Forecasting</h3>
-            </div>
-            <div className="space-y-4">
-              <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-400/20">
-                <p className="text-white/90 text-sm font-semibold mb-2">3D Emotional Avatar</p>
-                <p className="text-white/80 text-sm">Visual representation of your emotional state in real-time</p>
-              </div>
-              <div className="bg-blue-500/5 rounded-lg p-4 border border-blue-400/10">
-                <p className="text-white/90 text-sm font-semibold mb-2">Decision Impact Simulation</p>
-                <p className="text-white/80 text-sm">See how life decisions might affect your emotional trajectory</p>
+              <div className="rounded-lg p-3 border" style={{background: '#8B5CF605', borderColor: '#8B5CF610'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Emotional Pattern Insights</p>
+                <p className="text-xs" style={{color: '#A78BFA'}}>Understand emotional patterns</p>
               </div>
             </div>
           </div>
 
-          {/* Solution 3: Private AI Support */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-xl border border-purple-400/30 hover:border-purple-500 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 bg-purple-500/20 rounded-xl flex items-center justify-center mr-4">
-                <MessageCircle className="w-8 h-8 text-purple-300" />
+          {/* Solution 3: Journal Space - Green Theme */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border transition-all duration-300" style={{borderColor: '#10B98140', background: 'linear-gradient(135deg, rgba(255,255,255,0.1), #10B98110)'}}>
+            <div className="flex items-center mb-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-3" style={{background: '#10B98120'}}>
+                <svg className="w-6 h-6" style={{color: '#10B981'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white">24/7 AI Companion</h3>
+              <h3 className="text-lg font-bold text-white">Journal Space</h3>
             </div>
-            <div className="space-y-4">
-              <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-400/20">
-                <p className="text-white/90 text-sm font-semibold mb-2">Non-Judgmental Support</p>
-                <p className="text-white/80 text-sm">Always-available AI chat with intelligent emotional guidance</p>
+            <div className="space-y-3">
+              <div className="rounded-lg p-3 border" style={{background: '#10B98110', borderColor: '#10B98120'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Quick Action Slider</p>
+                <p className="text-xs" style={{color: '#34D399'}}>Quick logging of emotions for events</p>
               </div>
-              <div className="bg-purple-500/5 rounded-lg p-4 border border-purple-400/10">
-                <p className="text-white/90 text-sm font-semibold mb-2">Personalized Learning</p>
-                <p className="text-white/80 text-sm">Adapts to your patterns for truly personalized support</p>
+              <div className="rounded-lg p-3 border" style={{background: '#10B98105', borderColor: '#10B98110'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Ambient Mood Settings</p>
+                <p className="text-xs" style={{color: '#34D399'}}>Personalized environment</p>
+              </div>
+              <div className="rounded-lg p-3 border" style={{background: '#10B98105', borderColor: '#10B98110'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Music Integration</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                    <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <span className="text-xs text-white/70">Spotify, iTunes, YouTube Music</span>
+                </div>
+                {/* Music Playing Animation */}
+                <div className="flex items-center gap-1 mt-2">
+                  <div className="flex items-end gap-0.5 h-4">
+                    <div className="w-0.5 bg-green-400 rounded-full music-bar" style={{height: '8px', animationDelay: '0ms'}}></div>
+                    <div className="w-0.5 bg-green-400 rounded-full music-bar" style={{height: '12px', animationDelay: '150ms'}}></div>
+                    <div className="w-0.5 bg-green-400 rounded-full music-bar" style={{height: '16px', animationDelay: '300ms'}}></div>
+                    <div className="w-0.5 bg-green-400 rounded-full music-bar" style={{height: '10px', animationDelay: '450ms'}}></div>
+                    <div className="w-0.5 bg-green-400 rounded-full music-bar" style={{height: '14px', animationDelay: '600ms'}}></div>
+                    <div className="w-0.5 bg-green-400 rounded-full music-bar" style={{height: '8px', animationDelay: '750ms'}}></div>
+                  </div>
+                  <span className="text-xs text-green-400 ml-1">Now Playing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Solution 4: Private AI Support - Orange Theme */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border transition-all duration-300" style={{borderColor: '#F59E0B40', background: 'linear-gradient(135deg, rgba(255,255,255,0.1), #F59E0B10)'}}>
+            <div className="flex items-center mb-4">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mr-3" style={{background: '#F59E0B20'}}>
+                <MessageCircle className="w-6 h-6" style={{color: '#F59E0B'}} />
+              </div>
+              <h3 className="text-lg font-bold text-white">24/7 AI Companion</h3>
+            </div>
+            <div className="space-y-3">
+              <div className="rounded-lg p-3 border" style={{background: '#F59E0B10', borderColor: '#F59E0B20'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Quick Action Slider</p>
+                <p className="text-xs" style={{color: '#FBBF24'}}>Quick logging of emotions for events</p>
+              </div>
+              <div className="rounded-lg p-3 border" style={{background: '#F59E0B05', borderColor: '#F59E0B10'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Non-Judgmental Support</p>
+                <p className="text-xs" style={{color: '#FBBF24'}}>Always-available AI chat</p>
+              </div>
+              <div className="rounded-lg p-3 border" style={{background: '#F59E0B05', borderColor: '#F59E0B10'}}>
+                <p className="text-white/90 text-xs font-semibold mb-1">Personalized Learning</p>
+                <p className="text-xs" style={{color: '#FBBF24'}}>Adapts to your patterns</p>
               </div>
             </div>
           </div>

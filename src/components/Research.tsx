@@ -35,7 +35,7 @@ const Research: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-800 via-purple-900 to-slate-900 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Why Current Platforms Fail</h2>
@@ -46,10 +46,10 @@ const Research: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {researchData.map((item, index) => (
-            <div key={index} className="bg-white/5 rounded-2xl p-6 shadow-xl border border-white/10 hover:border-blue-400/30 transition-all duration-300">
-              <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-              <p className="text-white/80 mb-4 text-lg">{item.description}</p>
-              <p className="text-sm text-blue-300 font-medium">{item.source}</p>
+            <div key={index} className="rounded-2xl p-6 shadow-xl border border-white/10 transition-all duration-300" style={{background: 'linear-gradient(135deg, rgba(255,255,255,0.05), #2A7B9B10)'}}>
+              <h3 className="text-xl font-bold mb-3" style={{color: '#ffffff'}}>{item.title}</h3>
+              <p className="mb-4 text-lg" style={{color: '#87CEEB'}}>{item.description}</p>
+              <p className="text-sm font-medium" style={{color: '#B0E0E6'}}>{item.source}</p>
             </div>
           ))}
         </div>

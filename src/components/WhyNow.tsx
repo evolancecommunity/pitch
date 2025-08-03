@@ -3,24 +3,24 @@ import React from 'react';
 const whyNowData = [
   {
     stat: 'AI Adoption at All-Time High',
-    insight: 'Global AI adoption has doubled since 2019, with 77% of businesses now using AI (IBM, 2023).',
-    source: 'IBM Global AI Adoption Index, 2023'
+    insight: 'Global AI adoption has doubled since 2019, with 77% of businesses now using AI (IBM, 2024).',
+    source: 'IBM Global AI Adoption Index, 2024'
   },
   {
     stat: 'Mental Health Crisis',
-    insight: '1 in 4 people will be affected by mental or neurological disorders at some point in their lives (WHO, 2023).',
-    source: 'World Health Organization, 2023'
+    insight: '1 in 4 people will be affected by mental or neurological disorders at some point in their lives (WHO, 2025).',
+    source: 'World Health Organization, 2025'
   },
   {
     stat: 'Demand for Emotional Intelligence',
-    insight: 'Jobs requiring emotional intelligence are growing 6x faster than others (LinkedIn, 2023).',
-    source: 'LinkedIn Global Talent Trends, 2023'
+    insight: 'Jobs requiring emotional intelligence are growing 6x faster than others (UAEX, 2025).',
+    source: 'Arkansas Research Corporation UAEX, 2025'
   }
 ];
 
 const WhyNow: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">Why Now?</h2>

@@ -8,7 +8,7 @@ const LinkedInIcon: React.FC<LinkedInIconProps> = ({ className = "inline ml-2 mb
 
 const Team: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 relative overflow-hidden">
+    <section className="py-16 sm:py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl"></div>
@@ -25,26 +25,28 @@ const Team: React.FC = () => {
             Building Evolance from lived experience — not theory.
           </p>
         </div>
-        <div className="flex justify-center gap-6 sm:gap-8 mt-6 sm:mt-8 mb-6 sm:mb-8">
-          <div className="bg-white/5 rounded-2xl p-4 sm:p-6 shadow-xl border border-white/10 hover:border-blue-400/30 active:border-blue-400/50 transition-all duration-300 w-full max-w-3xl flex flex-col md:flex-row items-start gap-4 sm:gap-6 touch-manipulation">
-            <div className="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mr-0 md:mr-6 mb-3 sm:mb-4 md:mb-0">
-              <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-blue-300" />
-            </div>
-            <div>
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 flex items-center">
-                <a href="https://www.linkedin.com/in/indraneel24/" target="_blank" rel="noopener noreferrer" className="hover:underline active:underline flex items-center min-h-[44px] touch-manipulation">Indraneel Bhattacharjee <LinkedInIcon /></a>
-              </h3>
-              <div className="mb-2 sm:mb-3" />
-              <p className="text-white text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed font-normal">Founder & CEO (US)</p>
-              <div className="mb-2 sm:mb-3" />
-              <p className="text-white/80 text-base sm:text-lg mb-3 sm:mb-4 leading-relaxed font-light">Indraneel is a builder, engineer, and founder passionate about emotional intelligence and AI. He created Evolance to help people process what they can't articulate and find clarity in their lives.</p>
-              <div className="mb-2 sm:mb-3" />
-              <ul className="space-y-2 sm:space-y-4 text-white/80 text-sm sm:text-base mb-0 list-disc list-inside leading-relaxed">
-                <li>Graduated CS with 3 internships in just 2 years</li>
-                <li>Built multiple AI systems (LLM agents, voice bots, scraping infra)</li>
-                <li>Accepted into the MongoDB Startup Accelerator</li>
-              </ul>
-            </div>
+        <div className="flex justify-center gap-8 sm:gap-12 mt-6 sm:mt-8 mb-6 sm:mb-8">
+          <div className="flex-shrink-0 w-48 h-48 sm:w-64 sm:h-64 flex items-center justify-center relative">
+            <div className="absolute inset-0 rounded-full animate-ethereal-rgb" style={{background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.3))'}}></div>
+            <img 
+              src="/src/assets/dp.jpeg" 
+              alt="Indraneel Bhattacharjee" 
+              className="w-full h-full rounded-full object-cover border-2 border-white/20 relative z-10"
+              style={{filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'}}
+            />
+          </div>
+          <div className="flex-1">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center">
+              <a href="https://www.linkedin.com/in/indraneel24/" target="_blank" rel="noopener noreferrer" className="hover:underline active:underline flex items-center min-h-[44px] touch-manipulation">Indraneel Bhattacharjee <LinkedInIcon /></a>
+            </h3>
+            <p className="text-white text-lg sm:text-xl mb-4 leading-relaxed font-normal">Founder & CEO (US)</p>
+            <p className="text-lg sm:text-xl mb-6 leading-relaxed font-light" style={{color: '#87CEEB'}}>Indraneel is a builder, engineer, and founder passionate about emotional intelligence and AI. He created Evolance to help people process what they can't articulate and find clarity in their lives.</p>
+            <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg mb-0 list-disc list-inside leading-relaxed" style={{color: '#B0E0E6'}}>
+              <li>Helped business owners with 40+ years of experience build strategies to introduce and sell AI products for their growth</li>
+              <li>Graduated CS with 3 internships in just 2 years</li>
+              <li>Built multiple AI systems (LLM agents, voice bots, scraping infra)</li>
+              <li>Accepted into the MongoDB Startup Accelerator</li>
+            </ul>
           </div>
         </div>
       </div>

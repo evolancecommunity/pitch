@@ -205,4 +205,77 @@ html {
 button, a, [role="button"] {
   min-height: 44px;
   min-width: 44px;
+}
+
+/* Ethereal RGB animation for journal card - Chameleon style */
+@keyframes ethereal-rgb {
+  0% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.08), rgba(147, 51, 234, 0.03));
+    border-color: rgba(147, 51, 234, 0.2);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.15);
+  }
+  10% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.07), rgba(59, 130, 246, 0.04));
+    border-color: rgba(147, 51, 234, 0.18);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.14);
+  }
+  20% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.06), rgba(59, 130, 246, 0.05));
+    border-color: rgba(147, 51, 234, 0.16);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.13);
+  }
+  30% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.05), rgba(59, 130, 246, 0.06));
+    border-color: rgba(147, 51, 234, 0.14);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.12);
+  }
+  40% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.04), rgba(59, 130, 246, 0.07));
+    border-color: rgba(147, 51, 234, 0.12);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.11);
+  }
+  50% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.03), rgba(59, 130, 246, 0.08));
+    border-color: rgba(147, 51, 234, 0.10);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.10);
+  }
+  60% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.02), rgba(59, 130, 246, 0.09));
+    border-color: rgba(147, 51, 234, 0.08);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.09);
+  }
+  70% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.01), rgba(59, 130, 246, 0.10));
+    border-color: rgba(147, 51, 234, 0.06);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.08);
+  }
+  80% {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(59, 130, 246, 0.03));
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+  }
+  90% {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.07), rgba(16, 185, 129, 0.04));
+    border-color: rgba(59, 130, 246, 0.18);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.14);
+  }
+  100% {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.08), rgba(147, 51, 234, 0.03));
+    border-color: rgba(147, 51, 234, 0.2);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.15);
+  }
+}
+
+.animate-ethereal-rgb {
+  animation: ethereal-rgb 30s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+/* Disable animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-ethereal-rgb {
+    animation: none;
+    border-color: rgba(147, 51, 234, 0.3);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.2);
+  }
 } 

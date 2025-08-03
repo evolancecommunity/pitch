@@ -3,7 +3,7 @@ import { Check, X } from 'lucide-react';
 
 const HowWeAreDifferent: React.FC = () => {
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center tracking-tight">How We’re Different</h2>
         <div className="overflow-x-auto">
@@ -31,7 +31,7 @@ const HowWeAreDifferent: React.FC = () => {
                 </td>
               </tr>
               <tr className="border-b border-white/10">
-                <td className="py-4 px-4 text-white/90 font-medium">Decision Forecasting</td>
+                <td className="py-4 px-4 text-white/90 font-medium">Reflective Insights</td>
                 <td className="py-4 px-4 text-center">
                   <Check className="w-5 h-5 text-green-400 mx-auto" />
                 </td>
@@ -43,7 +43,7 @@ const HowWeAreDifferent: React.FC = () => {
                 </td>
               </tr>
               <tr className="border-b border-white/10">
-                <td className="py-4 px-4 text-white/90 font-medium">3D Emotional Avatar</td>
+                <td className="py-4 px-4 text-white/90 font-medium">Quick Action Slider</td>
                 <td className="py-4 px-4 text-center">
                   <Check className="w-5 h-5 text-green-400 mx-auto" />
                 </td>
@@ -79,6 +79,18 @@ const HowWeAreDifferent: React.FC = () => {
                   <X className="w-5 h-5 text-red-400 mx-auto" />
                 </td>
               </tr>
+              <tr className="border-b border-white/10">
+                <td className="py-4 px-4 text-white/90 font-medium">Journal Space with Music</td>
+                <td className="py-4 px-4 text-center">
+                  <Check className="w-5 h-5 text-green-400 mx-auto" />
+                </td>
+                <td className="py-4 px-4 text-center">
+                  <X className="w-5 h-5 text-red-400 mx-auto" />
+                </td>
+                <td className="py-4 px-4 text-center">
+                  <X className="w-5 h-5 text-red-400 mx-auto" />
+                </td>
+              </tr>
               <tr>
                 <td className="py-4 px-4 text-white/90 font-medium">Privacy-First Design</td>
                 <td className="py-4 px-4 text-center">
@@ -95,10 +107,10 @@ const HowWeAreDifferent: React.FC = () => {
           </table>
         </div>
         <div className="mt-8 text-center">
-          <div className="bg-gradient-to-r from-green-500/10 via-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-white/10">
+          <div className="rounded-lg p-6 border border-white/10" style={{background: 'linear-gradient(135deg, #2A7B9B10, #87CEEB10, #B0E0E610)'}}>
             <p className="text-lg text-white/90 font-semibold mb-2">Key Differentiator</p>
             <p className="text-white/80 text-sm">
-              Only Evolance combines <span className="font-bold text-green-300">analytics</span>, <span className="font-bold text-blue-300">decision forecasting</span>, and <span className="font-bold text-purple-300">visual emotional intelligence</span> in one platform.
+              Only Evolance focuses on <span style={{fontWeight: 'bold', color: '#2A7B9B'}}>preventive self-awareness</span>, <span style={{fontWeight: 'bold', color: '#87CEEB'}}>reflective insights</span>, and <span style={{fontWeight: 'bold', color: '#B0E0E6'}}>quick emotional logging</span> with integrated music therapy in one platform.
             </p>
           </div>
         </div>
