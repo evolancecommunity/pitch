@@ -15,11 +15,11 @@ const Hero: React.FC = () => {
 
       <div className="mobile-container relative z-10">
         {/* Main Content */}
-        <div className="mb-8 sm:mb-12">
+        <div className="mb-8 sm:mb-12 text-center">
           <div className="flex justify-center mb-6 sm:mb-8">
             <div className="relative">
               {/* Logo */}
-              <div className="flex items-center justify-center mb-6 sm:mb-8">
+              <div className="flex items-center justify-center mb-8 sm:mb-10 lg:mb-12">
                 <img 
                   src={logoPng} 
                   alt="Evolance Logo" 
@@ -28,17 +28,17 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
-          <h1 className="mobile-heading-responsive font-bold text-white mb-4 sm:mb-6 tracking-tight px-2">
+          <h1 className="mobile-heading-responsive font-bold text-white mb-4 sm:mb-6 tracking-tight px-2 text-center">
             Evolance
           </h1>
-          <p className="mobile-text-responsive text-white/90 mb-8 sm:mb-10 max-w-4xl mx-auto mobile-leading-relaxed font-light px-4">
+          <p className="mobile-text-responsive text-white/90 mb-8 sm:mb-10 max-w-4xl mx-auto mobile-leading-relaxed font-light px-2 text-center">
             Starting with <span style={{fontWeight: 'bold', color: '#87CEEB'}}>Emolytics</span> for emotional trends, evolving into a comprehensive platform for 
             <span style={{fontWeight: 'bold', color: '#87CEEB'}}> all age groups</span> - from kids to elderly - helping everyone 
             <span style={{fontWeight: 'bold', color: '#87CEEB'}}> grow emotionally</span>.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 sm:mb-16 px-4">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12 px-4 text-center">
           <a 
             href="https://www.evolance.info" 
             target="_blank" 
@@ -53,36 +53,46 @@ const Hero: React.FC = () => {
           </p>
         </div>
 
+        {/* Scroll Animation Hint */}
+        <div className="flex justify-center mb-12 sm:mb-16">
+          <div className="flex flex-col items-center gap-2 text-white/60 text-sm">
+            <p className="text-center">Scroll to discover investment opportunities</p>
+            <div className="animate-bounce">
+              <ArrowRight className="w-4 h-4 rotate-90" />
+            </div>
+          </div>
+        </div>
+
         {/* Key Goals */}
-        <div className="mobile-grid-responsive grid gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto px-4">
-          <div className="rounded-2xl p-6 sm:p-8 shadow-2xl border-2 transition-all duration-300 touch-manipulation" style={{borderColor: '#2A7B9B', background: 'linear-gradient(135deg, #1D2224, #2A7B9B20)', color: '#ffffff'}}>
-            <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center" style={{background: '#2A7B9B20'}}>
-                <Heart className="w-5 h-5 sm:w-6 sm:h-6" style={{color: '#2A7B9B'}} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 max-w-5xl mx-auto px-2 sm:px-4">
+          <div className="rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-xl sm:shadow-2xl border-2 transition-all duration-300 touch-manipulation" style={{borderColor: '#2A7B9B', background: 'linear-gradient(135deg, #1D2224, #2A7B9B20)', color: '#ffffff'}}>
+            <div className="flex items-center justify-center mb-2 sm:mb-4 lg:mb-6">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl flex items-center justify-center" style={{background: '#2A7B9B20'}}>
+                <Heart className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{color: '#2A7B9B'}} />
               </div>
             </div>
-            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style={{color: '#ffffff'}}>Emolytics First</h3>
-            <p className="text-sm leading-relaxed font-medium" style={{color: '#87CEEB'}}>Start with emotional trends and analytics</p>
+            <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold mb-1 sm:mb-2 lg:mb-3 text-center" style={{color: '#ffffff'}}>Emolytics First</h3>
+            <p className="text-xs sm:text-sm leading-relaxed font-medium text-center" style={{color: '#87CEEB'}}>Start with emotional trends and analytics</p>
           </div>
           
-          <div className="rounded-2xl p-6 sm:p-8 shadow-2xl border-2 transition-all duration-300 touch-manipulation" style={{borderColor: '#87CEEB', background: 'linear-gradient(135deg, #1D2224, #87CEEB20)', color: '#ffffff'}}>
-            <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center" style={{background: '#87CEEB20'}}>
-                <Brain className="w-5 h-5 sm:w-6 sm:h-6" style={{color: '#87CEEB'}} />
+          <div className="rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-xl sm:shadow-2xl border-2 transition-all duration-300 touch-manipulation" style={{borderColor: '#87CEEB', background: 'linear-gradient(135deg, #1D2224, #87CEEB20)', color: '#ffffff'}}>
+            <div className="flex items-center justify-center mb-2 sm:mb-4 lg:mb-6">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl flex items-center justify-center" style={{background: '#87CEEB20'}}>
+                <Brain className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{color: '#87CEEB'}} />
               </div>
             </div>
-            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style={{color: '#ffffff'}}>Age-Group Focus</h3>
-            <p className="text-sm leading-relaxed font-medium" style={{color: '#87CEEB'}}>Kids, teens, adults, elderly - everyone grows</p>
+            <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold mb-1 sm:mb-2 lg:mb-3 text-center" style={{color: '#ffffff'}}>Age-Group Focus</h3>
+            <p className="text-xs sm:text-sm leading-relaxed font-medium text-center" style={{color: '#87CEEB'}}>Kids, teens, adults, elderly - everyone grows</p>
           </div>
           
-          <div className="rounded-2xl p-6 sm:p-8 shadow-2xl border-2 transition-all duration-300 touch-manipulation sm:col-span-2 lg:col-span-1" style={{borderColor: '#B0E0E6', background: 'linear-gradient(135deg, #1D2224, #B0E0E620)', color: '#ffffff'}}>
-            <div className="flex items-center justify-center mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center" style={{background: '#B0E0E620'}}>
-                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" style={{color: '#B0E0E6'}} />
+          <div className="rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-xl sm:shadow-2xl border-2 transition-all duration-300 touch-manipulation sm:col-span-2 lg:col-span-1" style={{borderColor: '#B0E0E6', background: 'linear-gradient(135deg, #1D2224, #B0E0E620)', color: '#ffffff'}}>
+            <div className="flex items-center justify-center mb-2 sm:mb-4 lg:mb-6">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl flex items-center justify-center" style={{background: '#B0E0E620'}}>
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" style={{color: '#B0E0E6'}} />
               </div>
             </div>
-            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style={{color: '#ffffff'}}>Creative Evolution</h3>
-            <p className="text-sm leading-relaxed font-medium" style={{color: '#87CEEB'}}>Innovative approaches for each life stage</p>
+            <h3 className="text-sm sm:text-base lg:text-lg xl:text-xl font-bold mb-1 sm:mb-2 lg:mb-3 text-center" style={{color: '#ffffff'}}>Creative Evolution</h3>
+            <p className="text-xs sm:text-sm leading-relaxed font-medium text-center" style={{color: '#87CEEB'}}>Innovative approaches for each life stage</p>
           </div>
         </div>
       </div>
@@ -95,7 +105,7 @@ export default Hero;
 // MongoDB Accelerator Section
 export const MongoDBAccelerator: React.FC = () => (
   <section className="w-full flex justify-center items-center py-10 sm:py-14 bg-gradient-to-r from-slate-100 via-white to-slate-100 px-4">
-    <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white/80 rounded-2xl shadow-lg px-6 sm:px-8 py-4 sm:py-6 border border-slate-200 w-full max-w-5xl justify-center">
+    <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white/80 rounded-2xl shadow-lg px-6 sm:px-8 py-6 sm:py-8 border border-slate-200 w-full max-w-5xl justify-center">
       <img src={mongoLogoPng} alt="MongoDB for Startups Logo" className="h-8 sm:h-12 w-auto" />
       <span className="text-lg sm:text-2xl md:text-3xl font-semibold text-slate-800 text-center">
         Backed by <span className="text-green-600">MongoDB Startup Accelerator</span>

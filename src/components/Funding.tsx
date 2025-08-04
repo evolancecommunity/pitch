@@ -3,7 +3,7 @@ import { DollarSign, TrendingUp, Users, Target, BarChart3, Brain } from 'lucide-
 
 const Funding: React.FC = () => {
   return (
-    <section className="py-16 sm:py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
+    <section className="py-16 sm:py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}} data-section="funding">
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-32 h-32 bg-green-500/5 rounded-full blur-3xl"></div>
@@ -129,7 +129,7 @@ const Funding: React.FC = () => {
             Evolance starts with <span className="font-semibold text-green-300">Emolytics</span> for emotional trends, then evolves into a comprehensive platform for <span className="font-semibold text-blue-300">all age groups</span> - from kids to elderly - helping everyone grow emotionally through <span className="font-semibold text-purple-300">innovative, age-appropriate approaches</span>.
           </p>
           <a href="mailto:founder@evolance.info" className="bg-white hover:bg-gray-50 active:bg-gray-100 text-slate-900 px-8 sm:px-10 py-4 sm:py-5 rounded-lg font-semibold text-lg sm:text-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl inline-flex items-center gap-3 min-h-[48px] touch-manipulation">
-            Contact Us
+            Join Waitlist
           </a>
         </div>
       </div>

@@ -18,8 +18,8 @@ const Research: React.FC = () => {
       source: "SensorTower, 2023"
     },
     {
-      title: "No Forecasting",
-      description: "Zero emotional impact simulation",
+      title: "No Insights",
+      description: "Zero emotional pattern insights",
       source: "Market Research, 2024"
     },
     {

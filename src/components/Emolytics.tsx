@@ -389,11 +389,11 @@ const Emolytics: React.FC = () => {
           {/* Blurred gradient background behind chat */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] sm:w-[60vw] h-[40vw] sm:h-[32vw] max-w-4xl max-h-96 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none', background: 'linear-gradient(135deg, #2A7B9B20, #87CEEB15, #B0E0E610)'}}></div>
           <div className="w-full flex justify-center relative z-10">
-            <div className="w-full max-w-6xl flex flex-col md:flex-row items-center gap-8 sm:gap-12 px-4">
+            <div className="w-full max-w-6xl flex flex-col md:flex-row items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-12 px-2 sm:px-4">
               {/* Left Side - Meet Ev */}
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 className="mobile-text-2xl sm:mobile-text-3xl md:mobile-text-4xl font-bold mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>meet ev!</h3>
-                <p className="mobile-text-responsive text-white/80 max-w-xs">Your AI companion for emotional growth</p>
+                <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold mb-2 sm:mb-3 lg:mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>meet ev!</h3>
+                <p className="text-xs sm:text-sm lg:text-base text-white/80 max-w-xs">Your AI companion for emotional growth</p>
               </div>
               
               {/* Right Side - Chat Bubbles */}
@@ -426,9 +426,15 @@ const Emolytics: React.FC = () => {
           {/* Blurred gradient background behind journal */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] sm:w-[60vw] h-[40vw] sm:h-[32vw] max-w-4xl max-h-96 rounded-3xl blur-3xl z-0" style={{pointerEvents:'none', background: 'linear-gradient(135deg, #8B5CF620, #A78BFA15, #C084FC10)'}}></div>
           <div className="w-full flex justify-center relative z-10">
-            <div className="w-full max-w-full flex flex-col md:flex-row items-center gap-8 sm:gap-12 px-4">
+            <div className="w-full max-w-full flex flex-col md:flex-row items-center gap-4 sm:gap-6 lg:gap-8 xl:gap-12 px-2 sm:px-4">
+              {/* Mobile: How was your day? above, Desktop: How was your day? beside */}
+              <div className="flex flex-col items-center md:items-start text-center md:text-left order-1 md:order-2">
+                <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold mb-2 sm:mb-3 lg:mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>how was your day?</h3>
+                <p className="text-xs sm:text-sm lg:text-base text-white/80 max-w-xs">Reflect and grow with ambient mood settings</p>
+              </div>
+              
               {/* Left Side - Journal Entry */}
-              <div className="flex-[4]">
+              <div className="flex-[4] order-2 md:order-1">
                 <div className="w-full backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 xl:p-10 border border-white/20 shadow-xl animate-ethereal-rgb mobile-card">
                   <div className="flex items-center justify-between mb-4 sm:mb-6">
                     <div className="flex items-center gap-2 sm:gap-3">
@@ -512,12 +518,6 @@ const Emolytics: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              {/* Right Side - How was your day? */}
-              <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>how was your day?</h3>
-                <p className="text-white/80 text-base sm:text-lg max-w-xs">Reflect and grow with ambient mood settings</p>
               </div>
             </div>
           </div>

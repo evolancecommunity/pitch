@@ -22,7 +22,7 @@ const Solution: React.FC = () => {
         </div>
 
         {/* Three Core Solutions */}
-        <div className="mobile-grid-responsive grid gap-4 sm:gap-6 mb-12 sm:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 mb-8 sm:mb-12 lg:mb-20">
           {/* Solution 1: Emolytics + AI Insights - Blue-Purple Gradient Theme */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border transition-all duration-300" style={{borderColor: '#3B82F640', background: 'linear-gradient(135deg, rgba(255,255,255,0.1), #3B82F610, #8B5CF610)'}}>
             <div className="flex items-center mb-4">
