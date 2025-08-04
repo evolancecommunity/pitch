@@ -32,7 +32,7 @@ const Team: React.FC = () => {
             <img 
               src={dpImage} 
               alt="Indraneel Bhattacharjee" 
-              className="w-full h-full rounded-full object-cover border-2 border-white/20 relative z-10"
+              className="w-full h-full rounded-full object-cover border-2 border-white/20 relative z-10 animate-ethereal-rgb"
               style={{filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'}}
             />
           </div>
@@ -42,6 +42,16 @@ const Team: React.FC = () => {
             </h3>
             <p className="text-white text-lg sm:text-xl mb-4 leading-relaxed font-normal">Founder & CEO (US)</p>
             <p className="text-lg sm:text-xl mb-6 leading-relaxed font-light" style={{color: '#87CEEB'}}>Indraneel is a builder, engineer, and founder passionate about emotional intelligence and AI. He created Evolance to help people process what they can't articulate and find clarity in their lives.</p>
+            
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 sm:p-8 mb-6 border border-white/10 animate-ethereal-rgb" style={{borderColor: 'rgba(255,255,255,0.1)', background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(42,123,155,0.1))'}}>
+              <h4 className="text-lg sm:text-xl font-semibold text-white mb-4">Why Indraneel?</h4>
+              <p className="text-base sm:text-lg leading-relaxed font-light text-white/90">
+                "I picked this idea because I have been solving emotional problems for people for 10 years now. People feel comfortable around me and open up about their feelings and some even shed tears. I do not know why do people do that - never asked cuz i cared more about them offloading their baggages, however I wanna know anonymously so will work on Feedbacks and Suggestions. This made me aware of solving people's most basic yet unheard and unsaid problems. Still, there are things that people do not open up to even the therapists but that needs to be offloaded. I am trying out best to solve this problem for people yet keeping their lives private with the first AI platform for Self reflection and Self Awareness leading to their Emotional Intelligence and growth."
+              </p>
+              <p className="text-base sm:text-lg leading-relaxed font-light text-white/90 mt-4">
+                "I solve it by just listening and asking them questions about how and why they felt like that - the more they revealed, the more they release those baggages and get clarity which enables them to work on the problem by themselves. They just needed to reflect on their feelings consciously."
+              </p>
+            </div>
             <ul className="space-y-3 sm:space-y-4 text-base sm:text-lg mb-0 list-disc list-inside leading-relaxed" style={{color: '#B0E0E6'}}>
               <li>Helped business owners with 40+ years of experience build strategies to introduce and sell AI products for their growth</li>
               <li>Graduated CS with 3 internships in just 2 years</li>

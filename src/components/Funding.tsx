@@ -25,6 +25,59 @@ const Funding: React.FC = () => {
           <div className="mt-3 sm:mt-4 text-base sm:text-lg text-white/80 font-medium px-4">
             At $179/year, we need just 5,600 subscribers to hit $1M in ARR.
           </div>
+
+          {/* Use of Funds */}
+          <div className="mt-8 sm:mt-12 mb-8 sm:mb-12">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 text-center">Use of Funds</h3>
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 shadow-xl border border-white/20 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                <div>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-4 text-center">Pre-Seed Round ($1M)</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/90 text-sm sm:text-base">Tech Team Hiring</span>
+                      <span className="text-green-300 font-semibold">60%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/90 text-sm sm:text-base">Computing Infrastructure</span>
+                      <span className="text-blue-300 font-semibold">20%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/90 text-sm sm:text-base">Legal & Admin</span>
+                      <span className="text-emerald-300 font-semibold">10%</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/90 text-sm sm:text-base">GTM & Experiments</span>
+                      <span className="text-purple-300 font-semibold">10%</span>
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 mt-3 italic text-center">Focus: Build a robust platform and test early growth loops.</p>
+                </div>
+                <div>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-4 text-center">Future Rounds</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/90 text-sm sm:text-base">Hire Chief Marketing Officer (CMO)</span>
+                      <span className="text-purple-300 font-semibold">Prospective</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/90 text-sm sm:text-base">Build Sales Team</span>
+                      <span className="text-purple-300 font-semibold">Prospective</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/90 text-sm sm:text-base">Expand Product & Support Teams</span>
+                      <span className="text-purple-300 font-semibold">Prospective</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-white/90 text-sm sm:text-base">Launch Targeted GTM Campaigns</span>
+                      <span className="text-purple-300 font-semibold">Prospective</span>
+                    </div>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 mt-3 italic text-center">Focus: Accelerate growth, monetize, and dominate the category.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Market & Traction */}
@@ -118,6 +171,8 @@ const Funding: React.FC = () => {
             </div>
           </div>
         </div>
+
+
 
         {/* Vision & Differentiator - Hero style */}
         <div className="mt-16 sm:mt-24 mb-16 sm:mb-24 text-center">
