@@ -129,7 +129,7 @@ const Funding: React.FC = () => {
             Evolance starts with <span className="font-semibold text-green-300">Emolytics</span> for emotional trends, then evolves into a comprehensive platform for <span className="font-semibold text-blue-300">all age groups</span> - from kids to elderly - helping everyone grow emotionally through <span className="font-semibold text-purple-300">innovative, age-appropriate approaches</span>.
           </p>
           <a href="mailto:founder@evolance.info" className="bg-white hover:bg-gray-50 active:bg-gray-100 text-slate-900 px-8 sm:px-10 py-4 sm:py-5 rounded-lg font-semibold text-lg sm:text-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl inline-flex items-center gap-3 min-h-[48px] touch-manipulation">
-            Join Waitlist
+            Invest in Evolance
           </a>
         </div>
       </div>
