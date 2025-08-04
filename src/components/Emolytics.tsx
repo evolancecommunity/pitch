@@ -375,11 +375,11 @@ const Emolytics: React.FC = () => {
   const [insightRef, insightVisible] = useScrollReveal(0.3);
 
   return (
-    <section id="emolytics-section" className="py-16 sm:py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+    <section id="emolytics-section" className="py-16 sm:py-24 relative overflow-hidden mobile-section-padding" style={{backgroundColor: '#1D2224'}}>
+      <div className="mobile-container relative z-10">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight px-4">A Glimpse of Our Features</h2>
-          <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto mb-8 sm:mb-10 leading-relaxed font-light px-4">
+          <h2 className="mobile-text-3xl sm:mobile-text-4xl md:mobile-text-5xl font-bold text-white mb-4 tracking-tight px-4">A Glimpse of Our Features</h2>
+          <p className="mobile-text-responsive text-white/90 max-w-3xl mx-auto mb-8 sm:mb-10 mobile-leading-relaxed font-light px-4">
             Explore your emotional analytics — interactive, visual, and deeply insightful.
           </p>
         </div>
@@ -392,27 +392,27 @@ const Emolytics: React.FC = () => {
             <div className="w-full max-w-6xl flex flex-col md:flex-row items-center gap-8 sm:gap-12 px-4">
               {/* Left Side - Meet Ev */}
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>meet ev!</h3>
-                <p className="text-white/80 text-base sm:text-lg max-w-xs">Your AI companion for emotional growth</p>
+                <h3 className="mobile-text-2xl sm:mobile-text-3xl md:mobile-text-4xl font-bold mb-4 animate-fade-in-up drop-shadow-glow" style={{color: '#87CEEB'}}>meet ev!</h3>
+                <p className="mobile-text-responsive text-white/80 max-w-xs">Your AI companion for emotional growth</p>
               </div>
               
               {/* Right Side - Chat Bubbles */}
-              <div className="flex-1 flex flex-col gap-6 sm:gap-8 items-center">
+              <div className="flex-1 flex flex-col gap-4 sm:gap-6 lg:gap-8 items-center">
                 <div className="flex w-full fade-in-bubble-1">
-                  <div className="flex-shrink-0 mr-3 sm:mr-5"><EvIcon size={36} /></div>
-                  <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl text-white/80 text-base sm:text-lg text-center max-w-2xl font-light shadow-xl animate-float-bubble-1 backdrop-blur-md border border-white/20 fade-in-bubble-1" style={{backgroundColor: '#2A7B9B80'}}>
+                  <div className="flex-shrink-0 mr-2 sm:mr-3 lg:mr-5"><EvIcon size={28} /></div>
+                  <div className="px-4 sm:px-6 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-3xl text-white/80 mobile-text-responsive text-center max-w-2xl font-light shadow-xl animate-float-bubble-1 backdrop-blur-md border border-white/20 fade-in-bubble-1 mobile-card-compact" style={{backgroundColor: '#2A7B9B80'}}>
                     {ev1Typed}
                   </div>
                 </div>
                 <div className="flex w-full justify-end fade-in-bubble-2">
-                  <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl bg-white/20 text-white/80 text-base sm:text-lg text-center max-w-2xl font-light border border-white/20 shadow-xl animate-float-bubble-2 backdrop-blur-md bg-opacity-60 fade-in-bubble-2">
+                  <div className="px-4 sm:px-6 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-3xl bg-white/20 text-white/80 mobile-text-responsive text-center max-w-2xl font-light border border-white/20 shadow-xl animate-float-bubble-2 backdrop-blur-md bg-opacity-60 fade-in-bubble-2 mobile-card-compact">
                     {userTyped}
                   </div>
-                  <img src={avatar} alt="User avatar" className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl object-cover ml-3 sm:ml-5 shadow-lg border-2 border-white/20" />
+                  <img src={avatar} alt="User avatar" className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-2xl object-cover ml-2 sm:ml-3 lg:ml-5 shadow-lg border-2 border-white/20" />
                 </div>
                 <div className="flex w-full fade-in-bubble-3">
-                  <div className="flex-shrink-0 mr-3 sm:mr-5"><EvIcon size={36} /></div>
-                  <div className="px-6 sm:px-10 py-4 sm:py-5 rounded-3xl text-white/80 text-base sm:text-lg text-center max-w-2xl font-light shadow-xl animate-float-bubble-3 backdrop-blur-md border border-white/20 fade-in-bubble-3" style={{backgroundColor: '#2A7B9B80'}}>
+                  <div className="flex-shrink-0 mr-2 sm:mr-3 lg:mr-5"><EvIcon size={28} /></div>
+                  <div className="px-4 sm:px-6 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-3xl text-white/80 mobile-text-responsive text-center max-w-2xl font-light shadow-xl animate-float-bubble-3 backdrop-blur-md border border-white/20 fade-in-bubble-3 mobile-card-compact" style={{backgroundColor: '#2A7B9B80'}}>
                     {ev2Typed}
                   </div>
                 </div>
@@ -429,81 +429,81 @@ const Emolytics: React.FC = () => {
             <div className="w-full max-w-full flex flex-col md:flex-row items-center gap-8 sm:gap-12 px-4">
               {/* Left Side - Journal Entry */}
               <div className="flex-[4]">
-                <div className="w-full backdrop-blur-md rounded-2xl p-8 sm:p-10 border border-white/20 shadow-xl animate-ethereal-rgb">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
-                        <svg className="w-4 h-4 text-purple-300" fill="currentColor" viewBox="0 0 20 20">
+                <div className="w-full backdrop-blur-md rounded-2xl p-4 sm:p-6 lg:p-8 xl:p-10 border border-white/20 shadow-xl animate-ethereal-rgb mobile-card">
+                  <div className="flex items-center justify-between mb-4 sm:mb-6">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-purple-300" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                       </div>
-                      <span className="text-white/90 text-sm font-medium">Today's Reflection</span>
+                      <span className="text-white/90 mobile-text-sm font-medium">Today's Reflection</span>
                     </div>
-                    <span className="text-white/60 text-xs">2 hours ago</span>
+                    <span className="text-white/60 mobile-text-xs">2 hours ago</span>
                   </div>
-                  <div className="space-y-6">
-                    <div className="flex items-start justify-between">
+                  <div className="space-y-4 sm:space-y-6">
+                    <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
                       <div className="flex-1">
-                        <p className="text-white/80 text-sm leading-relaxed">
+                        <p className="text-white/80 mobile-text-sm mobile-leading-relaxed">
                           "{journalText}{isTyping && <span className="animate-pulse">|</span>}"
                         </p>
-                        <div className="flex items-center gap-2 mt-4">
-                          <span className="px-2 py-1 rounded-full bg-green-500/20 text-green-300 text-xs border border-green-500/30">Grateful</span>
-                          <span className="px-2 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs border border-blue-500/30">Calm</span>
-                          <span className="px-2 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs border border-purple-500/30">Focused</span>
+                        <div className="flex flex-wrap items-center gap-2 mt-3 sm:mt-4">
+                          <span className="px-2 py-1 rounded-full bg-green-500/20 text-green-300 mobile-text-xs border border-green-500/30">Grateful</span>
+                          <span className="px-2 py-1 rounded-full bg-blue-500/20 text-blue-300 mobile-text-xs border border-blue-500/30">Calm</span>
+                          <span className="px-2 py-1 rounded-full bg-purple-500/20 text-purple-300 mobile-text-xs border border-purple-500/30">Focused</span>
                         </div>
                       </div>
                       {/* Music Player - Right Side */}
-                      <div className="flex flex-col items-center gap-2 ml-4">
+                      <div className="flex flex-col items-center gap-2 ml-2 sm:ml-4">
                         {/* Song Details */}
                         <div className="text-center">
-                          <p className="text-xs font-medium text-purple-300">Weightless</p>
-                          <p className="text-xs text-purple-400/70">Marconi Union</p>
+                          <p className="mobile-text-xs font-medium text-purple-300">Weightless</p>
+                          <p className="mobile-text-xs text-purple-400/70">Marconi Union</p>
                         </div>
                         
                         {/* Music Animation */}
-                        <div className="flex items-end gap-0.5 h-4">
-                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '6px', animationDelay: '0ms'}}></div>
-                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '9px', animationDelay: '150ms'}}></div>
-                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '12px', animationDelay: '300ms'}}></div>
-                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '8px', animationDelay: '450ms'}}></div>
-                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '10px', animationDelay: '600ms'}}></div>
-                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '7px', animationDelay: '750ms'}}></div>
+                        <div className="flex items-end gap-0.5 h-3 sm:h-4">
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '4px', animationDelay: '0ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '6px', animationDelay: '150ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '8px', animationDelay: '300ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '5px', animationDelay: '450ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '7px', animationDelay: '600ms'}}></div>
+                          <div className="w-0.5 bg-purple-400 rounded-full music-bar" style={{height: '4px', animationDelay: '750ms'}}></div>
                         </div>
                         
                         {/* Control Buttons */}
                         <div className="flex items-center gap-1">
                           {/* Shuffle */}
-                          <button className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
-                            <svg className="w-3 h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                          <button className="mobile-touch-target w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M10.59 9.17L5.41 4L4 5.41l5.17 5.17L10.59 9.17zM14.5 4l2.04 2.04L4 18.59L5.41 20L17.96 7.46L20 9.5V4h-5.5zM14.83 13.41l-1.41 1.41l3.13 3.13L14.83 13.41z"/>
                             </svg>
                           </button>
                           
                           {/* Previous */}
-                          <button className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
-                            <svg className="w-3 h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                          <button className="mobile-touch-target w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
                             </svg>
                           </button>
                           
                           {/* Play/Pause */}
-                          <button className="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center hover:bg-purple-600 transition-colors">
-                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <button className="mobile-touch-target w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-purple-500 flex items-center justify-center hover:bg-purple-600 transition-colors">
+                            <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M8 5v14l11-7z"/>
                             </svg>
                           </button>
                           
                           {/* Next */}
-                          <button className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
-                            <svg className="w-3 h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                          <button className="mobile-touch-target w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
                             </svg>
                           </button>
                           
                           {/* Repeat */}
-                          <button className="w-6 h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
-                            <svg className="w-3 h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
+                          <button className="mobile-touch-target w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-purple-300" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/>
                             </svg>
                           </button>

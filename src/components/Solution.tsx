@@ -3,7 +3,7 @@ import { BarChart3, Brain, MessageCircle, Check, X } from 'lucide-react';
 
 const Solution: React.FC = () => {
   return (
-    <section className="py-24 relative overflow-hidden" style={{backgroundColor: '#1D2224'}}>
+    <section className="py-16 sm:py-24 relative overflow-hidden mobile-section-padding" style={{backgroundColor: '#1D2224'}}>
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-32 h-32 rounded-full blur-3xl" style={{background: '#2A7B9B15'}}></div>
@@ -11,18 +11,18 @@ const Solution: React.FC = () => {
         <div className="absolute top-1/2 left-1/3 w-20 h-20 rounded-full blur-2xl" style={{background: '#B0E0E610'}}></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+      <div className="mobile-container relative z-10">
+        <div className="text-center mb-12 sm:mb-20">
+          <h2 className="mobile-text-3xl sm:mobile-text-4xl md:mobile-text-5xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             The Solution: Evolance
           </h2>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="mobile-text-responsive text-white/90 max-w-4xl mx-auto mobile-leading-relaxed font-light">
             Starting with Emolytics for emotional trends, evolving into a comprehensive platform for all age groups - helping everyone grow emotionally through innovative, age-appropriate approaches.
           </p>
         </div>
 
         {/* Three Core Solutions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="mobile-grid-responsive grid gap-4 sm:gap-6 mb-12 sm:mb-20">
           {/* Solution 1: Emolytics + AI Insights - Blue-Purple Gradient Theme */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border transition-all duration-300" style={{borderColor: '#3B82F640', background: 'linear-gradient(135deg, rgba(255,255,255,0.1), #3B82F610, #8B5CF610)'}}>
             <div className="flex items-center mb-4">
