@@ -19,11 +19,11 @@ const Hero: React.FC = () => {
           <div className="flex justify-center mb-6 sm:mb-8">
             <div className="relative">
               {/* Logo */}
-              <div className="flex items-center justify-center mb-8 sm:mb-10 lg:mb-12">
+              <div className="flex items-center justify-center mb-16 sm:mb-20 lg:mb-24">
                 <img 
                   src={logoPng} 
                   alt="Evolance Logo" 
-                  className="h-12 sm:h-16 md:h-20 filter drop-shadow-lg retina-optimized"
+                  className="h-12 sm:h-16 md:h-20 filter drop-shadow-lg retina-optimized transform translate-y-12 sm:translate-y-16 lg:translate-y-20"
                 />
               </div>
             </div>
